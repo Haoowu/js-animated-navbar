@@ -12,4 +12,13 @@ Installation
 Usage
 ----
 
-	pac
+	package main
+
+	import (
+		"github.com/toorop/go-bitcoind"
+		"log"
+	)
+
+	const (
+		SERVER_HOST        = "You server host"
+		SERVER_PORT        = p
