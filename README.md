@@ -21,4 +21,8 @@ Usage
 
 	const (
 		SERVER_HOST        = "You server host"
-		SERVER_PORT        = p
+		SERVER_PORT        = port (int)
+		USER               = "user"
+		PASSWD             = "passwd"
+		USESSL             = false
+		WALLET_PASSPHRASE  = "WalletPass
