@@ -25,4 +25,10 @@ Usage
 		USER               = "user"
 		PASSWD             = "passwd"
 		USESSL             = false
-		WALLET_PASSPHRASE  = "WalletPass
+		WALLET_PASSPHRASE  = "WalletPassphrase"
+	)
+
+	func main() {
+		bc, err := bitcoind.New(SERVER_HOST, SERVER_PORT, USER, PASSWD, USESSL)
+		if err != nil {
+			log.Fatalln(e
