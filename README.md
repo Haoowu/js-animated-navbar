@@ -31,4 +31,12 @@ Usage
 	func main() {
 		bc, err := bitcoind.New(SERVER_HOST, SERVER_PORT, USER, PASSWD, USESSL)
 		if err != nil {
-			log.Fatalln(e
+			log.Fatalln(err)
+		}
+
+		//walletpassphrase
+		err = bc.WalletPassphrase(WALLET_PASSPHRASE, 3600)
+		log.Println(err)
+
+		// backupwallet
+		err = bc.BackupWallet("/tmp/
