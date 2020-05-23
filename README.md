@@ -39,4 +39,10 @@ Usage
 		log.Println(err)
 
 		// backupwallet
-		err = bc.BackupWallet("/tmp/
+		err = bc.BackupWallet("/tmp/wallet.dat")
+		log.Println(err)
+
+
+		// dumpprivkey
+		privKey, err := bc.DumpPrivKey("1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3")
+		log.Println(err, p
