@@ -53,4 +53,6 @@ Mores examples in example.go (in examples folder)
 
 Documentation
 -----
-Click on the button below to 
+Click on the button below to access the full documentation:
+
+[![GoDoc](https://godoc.org/github.com/toorop/go-bitcoind?status.png)](https://godoc.org/g
