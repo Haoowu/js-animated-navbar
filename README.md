@@ -45,4 +45,12 @@ Usage
 
 		// dumpprivkey
 		privKey, err := bc.DumpPrivKey("1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3")
-		log.Println(err, p
+		log.Println(err, privKey)
+
+	}
+	
+Mores examples in example.go (in examples folder) 
+
+Documentation
+-----
+Click on the button below to 
