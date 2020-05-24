@@ -61,4 +61,11 @@ Click on the button below to access the full documentation:
 
 Unit tests
 ----
-[![Build Status](https://travis-ci.org/Toorop/go-bitcoind.svg)](https://trav
+[![Build Status](https://travis-ci.org/Toorop/go-bitcoind.svg)](https://travis-ci.org/toorop/go-bitcoind)
+
+More than 100 unit tests are made.
+
+To run tests:
+
+	$ go get github.com/onsi/ginkgo/ginkgo
+	$ go get github.com/onsi
