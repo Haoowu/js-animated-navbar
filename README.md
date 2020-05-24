@@ -68,4 +68,11 @@ More than 100 unit tests are made.
 To run tests:
 
 	$ go get github.com/onsi/ginkgo/ginkgo
-	$ go get github.com/onsi
+	$ go get github.com/onsi/gomega
+	$ ginkgo
+
+	Running Suite: Bitcoind Suite	
+	=============================
+	Random Seed: 1401120770
+	Will run 112 of 112 specs
+
