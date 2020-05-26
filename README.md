@@ -76,3 +76,8 @@ To run tests:
 	Random Seed: 1401120770
 	Will run 112 of 112 specs
 
+	•••••••••••••••••••••••••••••••••••
+	Ran 112 of 112 Specs in 0.001 seconds
+	SUCCESS! -- 112 Passed | 0 Failed | 0 Pending | 0 Skipped PASS
+
+	Gi
