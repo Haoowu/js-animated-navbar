@@ -93,4 +93,6 @@ Todo
 * signrawtransaction
 * submitblock
 
-#####
+##### Note on SSL support 
+
+Note on ssl support : bitcoind library doesn't verify the server's certificate chain. That means that it accepts any certificate pr
