@@ -80,4 +80,17 @@ To run tests:
 	Ran 112 of 112 Specs in 0.001 seconds
 	SUCCESS! -- 112 Passed | 0 Failed | 0 Pending | 0 Skipped PASS
 
-	Gi
+	Ginkgo ran in 10.856335553s
+	Test Suite Passed
+ 
+
+
+
+Todo
+-----
+* GetBlockTemplate
+* sendrawtransaction
+* signrawtransaction
+* submitblock
+
+#####
