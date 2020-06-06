@@ -99,3 +99,6 @@ Note on ssl support : bitcoind library doesn't verify the server's certificate c
 
 
 Donation
+------
+
+![Donation QR](http://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bitcoin:1HgpsmxV52eAjDcoNpVGpYEhGfg
