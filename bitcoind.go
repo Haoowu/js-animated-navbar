@@ -325,3 +325,141 @@ func (b *Bitcoind) GetRawChangeAddress(account ...string) (rawAddress string, er
 	}
 	err = json.Unmarshal(r.Result, &rawAddress)
 	return
+}
+
+// GetRawMempool returns all transaction ids in memory pool
+func (b *Bitcoind) GetRawMempool() (txId []string, err error) {
+	r, err := b.client.call("getrawmempool", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txId)
+	return
+}
+
+type VerboseTx struct {
+	// Virtual transaction size as defined in BIP 141
+	Size uint32
+	// Transaction fee in BTC
+	Fee float64
+	// Transaction fee with fee deltas used for mining priority
+	ModifiedFee float64
+	// Local time when tx entered pool
+	Time uint32
+	// Block height when tx entered pool
+	Height uint32
+	// Number of inpool descendents (including this one)
+	DescendantCount uint32
+	// Virtual transaction size of in-mempool descendants (including this one)
+	DescendantSize uint32
+	// Modified fees (see above) of in-mempool descendants (including this one)
+	DescendantFees float64
+	// Number of in-mempool ancestor transactions (including this one)
+	AncestorCount uint32
+	// Virtual transaction size of in-mempool ancestors (including this one)
+	AncestorSize uint32
+	// Modified fees (see above) of in-mempool ancestors (including this one)
+	AncestorFees uint32
+	// Hash of serialized transaction, including witness data
+	WTxId string
+	// Unconfirmed transactions used as inputs for this transaction
+	Depends []string
+	// Used by Bitcoin Unlimited RPC
+	SpentBy []string
+}
+
+// GetRawMempoolVerbose returns a verbose set of transactions
+// map [TxId] => VerboseTx
+func (b *Bitcoind) GetRawMempoolVerbose() (txs map[string]VerboseTx, err error) {
+	r, err := b.client.call("getrawmempool", []bool{true})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	// marshall the data into the string txs map
+	err = json.Unmarshal(r.Result, &txs)
+	return
+}
+
+// GetRawTransaction returns raw transaction representation for given transaction id.
+func (b *Bitcoind) GetRawTransaction(txId string, verbose bool) (rawTx interface{}, err error) {
+	intVerbose := 0
+	if verbose {
+		intVerbose = 1
+	}
+	r, err := b.client.call("getrawtransaction", []interface{}{txId, intVerbose})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	if !verbose {
+		err = json.Unmarshal(r.Result, &rawTx)
+	} else {
+		var t RawTransaction
+		err = json.Unmarshal(r.Result, &t)
+		rawTx = t
+	}
+	return
+}
+
+// GetReceivedByAccount Returns the total amount received by addresses with [account] in
+// transactions with at least [minconf] confirmations. If [account] is set to all return
+// will include all transactions to all accounts
+func (b *Bitcoind) GetReceivedByAccount(account string, minconf uint32) (amount float64, err error) {
+	if account == "all" {
+		account = ""
+	}
+	r, err := b.client.call("getreceivedbyaccount", []interface{}{account, minconf})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &amount)
+	return
+}
+
+// Returns the amount received by <address> in transactions with at least [minconf] confirmations.
+// It correctly handles the case where someone has sent to the address in multiple transactions.
+// Keep in mind that addresses are only ever used for receiving transactions. Works only for addresses
+// in the local wallet, external addresses will always show 0.
+func (b *Bitcoind) GetReceivedByAddress(address string, minconf uint32) (amount float64, err error) {
+	r, err := b.client.call("getreceivedbyaddress", []interface{}{address, minconf})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &amount)
+	return
+}
+
+// GetTransaction returns a Bitcoind.Transation struct about the given transaction
+func (b *Bitcoind) GetTransaction(txid string) (transaction Transaction, err error) {
+	r, err := b.client.call("gettransaction", []interface{}{txid})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &transaction)
+	return
+}
+
+// GetTxOut returns details about an unspent transaction output (UTXO)
+func (b *Bitcoind) GetTxOut(txid string, n uint32, includeMempool bool) (transactionOut UTransactionOut, err error) {
+	r, err := b.client.call("gettxout", []interface{}{txid, n, includeMempool})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &transactionOut)
+	return
+}
+
+// GetTxOutsetInfo returns statistics about the unspent transaction output (UTXO) set
+func (b *Bitcoind) GetTxOutsetInfo() (txOutSet TransactionOutSet, err error) {
+	r, err := b.client.call("gettxoutsetinfo", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txOutSet)
+	return
+}
+
+// GetWork
+// If [data] is not specified, returns formatted hash data to work on
+// If [data] is specified, tries to solve the block and returns true if it was successful.
+func (b *Bitcoind) GetWork(data ...string) (response interface{}, err error) {
+	if len(data) > 1 {
