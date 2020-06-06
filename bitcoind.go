@@ -196,3 +196,132 @@ func (b *Bitcoind) GetBlockTemplate(capabilities []string, mode string) (templat
 	params := getBlockTemplateParams{
 		Mode:         mode,
 		Capabilities: capabilities,
+	}
+	// TODO []interface{}{mode, capa}
+	r, err := b.client.call("getblocktemplate", []getBlockTemplateParams{params})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	return
+}
+
+type ChainTip struct {
+	// The height of the current tip
+	Height int
+	// The hash of the highest tip
+	Hash string
+	// The length of the associated blockchain branch
+	BranchLen int
+	// The status of the current tip.
+	Status string
+}
+
+func (b *Bitcoind) GetChainTips() (tips []ChainTip, err error) {
+	r, err := b.client.call("getchaintips", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &tips)
+	return
+}
+
+// GetConnectionCount returns the number of connections to other nodes.
+func (b *Bitcoind) GetConnectionCount() (count uint64, err error) {
+	r, err := b.client.call("getconnectioncount", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	count, err = strconv.ParseUint(string(r.Result), 10, 64)
+	return
+}
+
+// GetDifficulty returns the proof-of-work difficulty as a multiple of
+// the minimum difficulty.
+func (b *Bitcoind) GetDifficulty() (difficulty float64, err error) {
+	r, err := b.client.call("getdifficulty", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	difficulty, err = strconv.ParseFloat(string(r.Result), 64)
+	return
+}
+
+// GetGenerate returns true or false whether bitcoind is currently generating hashes
+func (b *Bitcoind) GetGenerate() (generate bool, err error) {
+	r, err := b.client.call("getgenerate", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &generate)
+	return
+}
+
+// GetHashesPerSec returns a recent hashes per second performance measurement while generating.
+func (b *Bitcoind) GetHashesPerSec() (hashpersec float64, err error) {
+	r, err := b.client.call("gethashespersec", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &hashpersec)
+	return
+}
+
+// GetInfo return result of "getinfo" command (Amazing !)
+func (b *Bitcoind) GetInfo() (i Info, err error) {
+	r, err := b.client.call("getinfo", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &i)
+	return
+}
+
+// GetMiningInfo returns an object containing mining-related information
+func (b *Bitcoind) GetMiningInfo() (miningInfo MiningInfo, err error) {
+	r, err := b.client.call("getmininginfo", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &miningInfo)
+	return
+}
+
+// GetNewAddress return a new address for account [account].
+func (b *Bitcoind) GetNewAddress(account ...string) (addr string, err error) {
+	// 0 or 1 account
+	if len(account) > 1 {
+		err = errors.New("Bad parameters for GetNewAddress: you can set 0 or 1 account")
+		return
+	}
+	r, err := b.client.call("getnewaddress", account)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &addr)
+	return
+}
+
+// GetPeerInfo returns data about each connected node
+func (b *Bitcoind) GetPeerInfo() (peerInfo []Peer, err error) {
+	r, err := b.client.call("getpeerinfo", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &peerInfo)
+	return
+}
+
+// GetRawChangeAddress Returns a new Bitcoin address, for receiving change.
+// This is for use with raw transactions, NOT normal use.
+func (b *Bitcoind) GetRawChangeAddress(account ...string) (rawAddress string, err error) {
+	// 0 or 1 account
+	if len(account) > 1 {
+		err = errors.New("Bad parameters for GetRawChangeAddress: you can set 0 or 1 account")
+		return
+	}
+	r, err := b.client.call("getrawchangeaddress", account)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &rawAddress)
+	return
