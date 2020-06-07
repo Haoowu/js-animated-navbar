@@ -463,3 +463,135 @@ func (b *Bitcoind) GetTxOutsetInfo() (txOutSet TransactionOutSet, err error) {
 // If [data] is specified, tries to solve the block and returns true if it was successful.
 func (b *Bitcoind) GetWork(data ...string) (response interface{}, err error) {
 	if len(data) > 1 {
+		err = errors.New("Bad parameters for GetWork: you can set 0 or 1 parameter data")
+		return
+	}
+	var r rpcResponse
+
+	if len(data) == 0 {
+		r, err = b.client.call("getwork", nil)
+		if err = handleError(err, &r); err != nil {
+			return
+		}
+		var work Work
+		err = json.Unmarshal(r.Result, &work)
+		response = work
+	} else {
+		r, err = b.client.call("getwork", data)
+		if err = handleError(err, &r); err != nil {
+			return
+		}
+		var t bool
+		err = json.Unmarshal(r.Result, &t)
+		response = t
+	}
+	return
+}
+
+// ImportPrivKey Adds a private key (as returned by dumpprivkey) to your wallet.
+// This may take a while, as a rescan is done, looking for existing transactions.
+// Optional [rescan] parameter added in 0.8.0.
+// Note: There's no need to import public key, as in ECDSA (unlike RSA) this
+// can be computed from private key.
+func (b *Bitcoind) ImportPrivKey(privKey, label string, rescan bool) error {
+	r, err := b.client.call("importprivkey", []interface{}{privKey, label, rescan})
+	return handleError(err, &r)
+}
+
+// KeyPoolRefill fills the keypool, requires wallet passphrase to be set.
+func (b *Bitcoind) KeyPoolRefill() error {
+	r, err := b.client.call("keypoolrefill", nil)
+	return handleError(err, &r)
+}
+
+// ListAccounts returns Object that has account names as keys, account balances as values.
+func (b *Bitcoind) ListAccounts(minconf int32) (accounts map[string]float64, err error) {
+	r, err := b.client.call("listaccounts", []int32{minconf})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &accounts)
+	return
+}
+
+// ListAddressResult represents a result composing ListAddressGroupings slice reply
+type ListAddressResult struct {
+	Address string
+	Amount  float64
+	Account string
+}
+
+// ListAddressGroupings returns all addresses in the wallet and info used for coincontrol.
+func (b *Bitcoind) ListAddressGroupings() (list []ListAddressResult, err error) {
+	r, err := b.client.call("listaddressgroupings", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	// hum.....
+	var t [][][]interface{}
+	err = json.Unmarshal(r.Result, &t)
+	for _, tt := range t {
+		for _, ttt := range tt {
+			list = append(list, ListAddressResult{ttt[0].(string), ttt[1].(float64), ttt[2].(string)})
+		}
+	}
+	return
+}
+
+// ReceivedByAccount represents how much coin a account have recieved
+type ReceivedByAccount struct {
+	// the account of the receiving addresses
+	Account string
+	// total amount received by addresses with this account
+	Amount float64
+	// number of confirmations of the most recent transaction included
+	Confirmations uint32
+}
+
+// ListReceivedByAccount Returns an slice of AccountRecieved:
+func (b *Bitcoind) ListReceivedByAccount(minConf uint32, includeEmpty bool) (list []ReceivedByAccount, err error) {
+	r, err := b.client.call("listreceivedbyaccount", []interface{}{minConf, includeEmpty})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &list)
+	return
+}
+
+// ReceivedByAddress represents how much coin a account have recieved
+type ReceivedByAddress struct {
+	//  receiving address
+	Address string
+	// The corresponding account
+	Account string
+	// total amount received by addresses with this account
+	Amount float64
+	// number of confirmations of the most recent transaction included
+	Confirmations uint32
+	// Tansactions ID
+	TxIds []string
+}
+
+// ListReceivedByAccount Returns an slice of AccountRecieved:
+func (b *Bitcoind) ListReceivedByAddress(minConf uint32, includeEmpty bool) (list []ReceivedByAddress, err error) {
+	r, err := b.client.call("listreceivedbyaddress", []interface{}{minConf, includeEmpty})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &list)
+	return
+}
+
+// ListSinceBlock
+func (b *Bitcoind) ListSinceBlock(blockHash string, targetConfirmations uint32) (transaction []Transaction, err error) {
+	r, err := b.client.call("listsinceblock", []interface{}{blockHash, targetConfirmations})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	type ts struct {
+		Transactions []Transaction
+	}
+	var result ts
+	if err = json.Unmarshal(r.Result, &result); err != nil {
+		return
+	}
