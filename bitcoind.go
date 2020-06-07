@@ -595,3 +595,160 @@ func (b *Bitcoind) ListSinceBlock(blockHash string, targetConfirmations uint32) 
 	if err = json.Unmarshal(r.Result, &result); err != nil {
 		return
 	}
+	transaction = result.Transactions
+	return
+}
+
+// ListTransactions returns up to [count] most recent transactions skipping the first
+// [from] transactions for account [account]. If [account] not provided it'll return
+// recent transactions from all accounts.
+func (b *Bitcoind) ListTransactions(account string, count, from uint32) (transaction []Transaction, err error) {
+	r, err := b.client.call("listtransactions", []interface{}{account, count, from})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &transaction)
+	return
+}
+
+// ListUnspent returns array of unspent transaction inputs in the wallet.
+func (b *Bitcoind) ListUnspent(minconf, maxconf uint32) (transactions []Transaction, err error) {
+	if maxconf > 999999 {
+		maxconf = 999999
+	}
+	r, err := b.client.call("listunspent", []interface{}{minconf, maxconf})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &transactions)
+	return
+}
+
+// UnspendableOutput represents a unspendable (locked) output
+type UnspendableOutput struct {
+	TxId string `json:"txid"`
+	Vout uint64 `json:"vout"`
+}
+
+// ListLockUnspent returns list of temporarily unspendable outputs
+func (b *Bitcoind) ListLockUnspent() (unspendableOutputs []UnspendableOutput, err error) {
+	r, err := b.client.call("listlockunspent", nil)
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &unspendableOutputs)
+	return
+}
+
+// LockUnspent updates(lock/unlock) list of temporarily unspendable outputs
+func (b *Bitcoind) LockUnspent(lock bool, outputs []UnspendableOutput) (success bool, err error) {
+	r, err := b.client.call("lockunspent", []interface{}{lock, outputs})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &success)
+	return
+}
+
+// Move from one account in your wallet to another
+func (b *Bitcoind) Move(formAccount, toAccount string, amount float64, minconf uint32, comment string) (success bool, err error) {
+	r, err := b.client.call("move", []interface{}{formAccount, toAccount, amount, minconf, comment})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &success)
+	return
+
+}
+
+// SendFrom send amount from fromAccount to toAddress
+//  amount is a real and is rounded to 8 decimal places.
+//  Will send the given amount to the given address, ensuring the account has a valid balance using [minconf] confirmations.
+func (b *Bitcoind) SendFrom(fromAccount, toAddress string, amount float64, minconf uint32, comment, commentTo string) (txID string, err error) {
+	r, err := b.client.call("sendfrom", []interface{}{fromAccount, toAddress, amount, minconf, comment, commentTo})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txID)
+	return
+}
+
+// SenMany send multiple times
+func (b *Bitcoind) SendMany(fromAccount string, amounts map[string]float64, minconf uint32, comment string) (txID string, err error) {
+	r, err := b.client.call("sendmany", []interface{}{fromAccount, amounts, minconf, comment})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txID)
+	return
+}
+
+// SendManySubtractFeeFrom send multiple times (with fee from)
+// https://bitcoincore.org/en/doc/0.16.0/rpc/wallet/sendmany/
+func (b *Bitcoind) SendManySubtractFeeFrom(fromAccount string, amounts map[string]float64, minconf uint32, comment string, feefrom []string) (txID string, err error) {
+	r, err := b.client.call("sendmany", []interface{}{fromAccount, amounts, minconf, comment, feefrom})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txID)
+	return
+}
+
+// SendManyReplacable send multiple times (with fee from)
+// https://bitcoincore.org/en/doc/0.16.0/rpc/wallet/sendmany/
+func (b *Bitcoind) SendManyReplaceable(fromAccount string, amounts map[string]float64, minconf uint32, comment string, feefrom []string, replaceable *bool) (txID string, err error) {
+
+	var r rpcResponse
+
+	if replaceable != nil {
+		r, err = b.client.call("sendmany", []interface{}{fromAccount, amounts, minconf, comment, feefrom})
+	} else {
+		r, err = b.client.call("sendmany", []interface{}{fromAccount, amounts, minconf, comment, feefrom, *replaceable})
+	}
+
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txID)
+	return
+}
+
+// SendToAddress send an amount to a given address
+func (b *Bitcoind) SendToAddress(toAddress string, amount float64, comment, commentTo string) (txID string, err error) {
+	r, err := b.client.call("sendtoaddress", []interface{}{toAddress, amount, comment, commentTo})
+	if err = handleError(err, &r); err != nil {
+		return
+	}
+	err = json.Unmarshal(r.Result, &txID)
+	return
+}
+
+// SetAccount sets the account associated with the given address
+func (b *Bitcoind) SetAccount(address, account string) error {
+	r, err := b.client.call("setaccount", []interface{}{address, account})
+	return handleError(err, &r)
+}
+
+// SetGenerate turns generation on or off.
+// Generation is limited to [genproclimit] processors, -1 is unlimited.
+func (b *Bitcoind) SetGenerate(generate bool, genProcLimit int32) error {
+	r, err := b.client.call("setgenerate", []interface{}{generate, genProcLimit})
+	return handleError(err, &r)
+}
+
+// SetTxFee set the transaction fee per kB
+func (b *Bitcoind) SetTxFee(amount float64) error {
+	r, err := b.client.call("settxfee", []interface{}{amount})
+	return handleError(err, &r)
+}
+
+// Stop stop bitcoin server.
+func (b *Bitcoind) Stop() error {
+	r, err := b.client.call("stop", nil)
+	return handleError(err, &r)
+}
+
+// SignMessage sign a message with the private key of an address
+func (b *Bitcoind) SignMessage(address, message string) (sig string, err error) {
+	r, err := b.client.call("signmessage", []interface{}{address, message})
+	if err = handleError(err, &r); err != nil {
