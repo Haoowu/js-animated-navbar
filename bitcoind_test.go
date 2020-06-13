@@ -11,4 +11,7 @@ import (
 	"strings"
 )
 
-func getNewTestServer(handler http.Handler) (testServer
+func getNewTestServer(handler http.Handler) (testServer *httptest.Server, host string, port int, err error) {
+	testServer = httptest.NewServer(handler)
+	p := strings.Split(testServer.URL, ":")
+	
