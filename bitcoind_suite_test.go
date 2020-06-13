@@ -8,4 +8,6 @@ import (
 )
 
 func TestBitcoind(t *testing.T) {
-	RegisterFailHandle
+	RegisterFailHandler(Fail)
+	RunSpecs(t, "Bitcoind Suite")
+}
