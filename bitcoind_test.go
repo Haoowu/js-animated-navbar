@@ -26,4 +26,6 @@ var _ = Describe("Bitcoind", func() {
 	// But for the fisrt test we will do it as sample
 
 	Describe("backupwallet", func() {
-		// Will be used to test all case where on
+		// Will be used to test all case where only error could be returned
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWr
