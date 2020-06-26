@@ -28,4 +28,7 @@ var _ = Describe("Bitcoind", func() {
 	Describe("backupwallet", func() {
 		// Will be used to test all case where only error could be returned
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.ResponseWr
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1400432805294160077}`)
+			})
+			ts, host, port, err 
