@@ -36,4 +36,7 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := New(host, port, "x", "fake", 
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			err = bitcoindClient.BackupWallet("/tmp/wallet.dat")
+			It("should not error", func() {
+				Expect(err).Not
