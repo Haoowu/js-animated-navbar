@@ -45,4 +45,8 @@ var _ = Describe("Bitcoind", func() {
 		// will be used to test all server error handling (ie when server reply whith error!=nil)
 		Context("when error from server", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":null,"error":{"co
+				fmt.Fprintln(w, `{"result":null,"error":{"code":6,"message":"fake error"},"id":1400425780999713481}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fata
