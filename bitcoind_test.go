@@ -39,4 +39,8 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			err = bitcoindClient.BackupWallet("/tmp/wallet.dat")
 			It("should not error", func() {
-				Expect(err).Not
+				Expect(err).NotTo(HaveOccurred())
+			})
+		})
+		// will be used to test all server error handling (ie when server reply whith error!=nil)
+		Context("when error f
