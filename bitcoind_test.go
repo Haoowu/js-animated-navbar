@@ -59,3 +59,11 @@ var _ = Describe("Bitcoind", func() {
 			})
 
 			It("error should be 'fake error'", func() {
+				Expect(err).Should(MatchError("(6) fake error"))
+			})
+		})
+	})
+
+	Describe("dumpprivkey", func() {
+		Context("when success", func() {
+	
