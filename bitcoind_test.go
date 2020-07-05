@@ -66,4 +66,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("dumpprivkey", func() {
 		Context("when success", func() {
-	
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":"K7boEpon3igLpb
