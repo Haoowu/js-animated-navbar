@@ -67,4 +67,6 @@ var _ = Describe("Bitcoind", func() {
 	Describe("dumpprivkey", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":"K7boEpon3igLpb
+				fmt.Fprintln(w, `{"result":"K7boEpon3igLpbVv6xebaR4bHALHPeLQSHhUJGiZ9S1U85ERWWi9","error":null,"id":1400433741655216321}`)
+			})
+			ts, host, port, err := getNewTestServer
