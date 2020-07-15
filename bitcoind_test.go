@@ -76,4 +76,8 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			privKey, err := bitcoindClient.DumpPrivKey("1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3")
-			It("should not error"
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should be a the pk", func() {
+				Expect(privKey).To(Equal("K
