@@ -80,4 +80,10 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should be a the pk", func() {
-				Expect(privKey).To(Equal("K
+				Expect(privKey).To(Equal("K7boEpon3igLpbVv6xebaR4bHALHPeLQSHhUJGiZ9S1U85ERWWi9"))
+			})
+		})
+	})
+
+	/*Describe("encryptwallet", func() {
+		Context("when succes
