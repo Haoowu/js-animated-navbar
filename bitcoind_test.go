@@ -88,4 +88,9 @@ var _ = Describe("Bitcoind", func() {
 	/*Describe("encryptwallet", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"resul
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1400432805294160077}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
