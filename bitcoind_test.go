@@ -86,4 +86,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	/*Describe("encryptwallet", func() {
-		Context("when succes
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"resul
