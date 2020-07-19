@@ -116,4 +116,7 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			account, err := bitcoindClient.GetAccount("1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP2")
 			It("should not error", func() {
-				Expe
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return string testAccount", func() {
+				Expect(account).To(Equal("testAcco
