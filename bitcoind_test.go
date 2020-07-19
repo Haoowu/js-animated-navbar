@@ -103,4 +103,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})*/
 
-	Describe("Testing GetAccount",
+	Describe("Testing GetAccount", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			
