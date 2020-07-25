@@ -119,4 +119,11 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should return string testAccount", func() {
-				Expect(account).To(Equal("testAcco
+				Expect(account).To(Equal("testAccount"))
+			})
+		})
+	})
+
+	Describe("Testing GetAccountAddress", func() {
+		Context("when success", func() {
+			handler := ht
