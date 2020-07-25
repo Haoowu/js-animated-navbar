@@ -126,4 +126,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetAccountAddress", func() {
 		Context("when success", func() {
-			handler := ht
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy"
