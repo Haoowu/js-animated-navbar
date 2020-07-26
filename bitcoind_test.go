@@ -135,4 +135,8 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			account, err := bitcoindClient.GetAccountAddress("testAccount"
+			account, err := bitcoindClient.GetAccountAddress("testAccount")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return string 1Pyizp4HK7Bfz7Cdb
