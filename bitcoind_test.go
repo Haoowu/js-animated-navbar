@@ -139,4 +139,10 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
-			It("should return string 1Pyizp4HK7Bfz7Cdb
+			It("should return string 1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy", func() {
+				Expect(account).To(Equal("1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy"))
+			})
+		})
+	})
+
+	Describe("Testing Get
