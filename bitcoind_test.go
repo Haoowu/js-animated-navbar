@@ -161,4 +161,7 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should be a slice of string", func() {
-				Expect(addresses).Should(BeAssignableToTyp
+				Expect(addresses).Should(BeAssignableToTypeOf([]string{}))
+
+			})
+			It(`should return slice "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3","164s6WasTY
