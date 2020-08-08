@@ -170,4 +170,6 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Desc
+	Describe("Testing GetBalance", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *htt
