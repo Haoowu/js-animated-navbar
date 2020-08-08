@@ -172,4 +172,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetBalance", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.ResponseWriter, r *htt
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":0.00066600,"error":null,"id":1400501795897598372}`)
+			})
+			ts, host, port, err
