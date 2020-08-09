@@ -180,4 +180,6 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := 
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			balance, err := bitcoindClient.GetBalance("testAccount", 10)
+			It("should not
