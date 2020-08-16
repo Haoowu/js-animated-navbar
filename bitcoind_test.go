@@ -186,4 +186,10 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should return float64 0.000666", func() {
-				Expect(b
+				Expect(balance).Should(BeNumerically("==", 0.000666))
+			})
+		})
+	})
+
+	Describe("Testing GetBestBlockhash", func() {
+		Context("when success", fu
