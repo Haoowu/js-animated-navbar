@@ -182,4 +182,8 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			balance, err := bitcoindClient.GetBalance("testAccount", 10)
-			It("should not
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return float64 0.000666", func() {
+				Expect(b
