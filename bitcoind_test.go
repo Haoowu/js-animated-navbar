@@ -194,4 +194,7 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetBestBlockhash", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":"000000000000000056f14ed49ba8bf0bef7c98b5965058
+				fmt.Fprintln(w, `{"result":"000000000000000056f14ed49ba8bf0bef7c98b5965058cc6ff02ab00fc26d82","error":null,"id":1400502065079564568}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+		
