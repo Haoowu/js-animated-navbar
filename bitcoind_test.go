@@ -197,4 +197,9 @@ var _ = Describe("Bitcoind", func() {
 				fmt.Fprintln(w, `{"result":"000000000000000056f14ed49ba8bf0bef7c98b5965058cc6ff02ab00fc26d82","error":null,"id":1400502065079564568}`)
 			})
 			ts, host, port, err := getNewTestServer(handler)
-		
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			bestblockhash,
