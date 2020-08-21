@@ -210,4 +210,8 @@ var _ = Describe("Bitcoind", func() {
 				Expect(bestblockhash).Should(Equal("000000000000000056f14ed49ba8bf0bef7c98b5965058cc6ff02ab00fc26d82"))
 			})
 		})
-	
+	})
+
+	Describe("Testing GetBlock", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.Respons
