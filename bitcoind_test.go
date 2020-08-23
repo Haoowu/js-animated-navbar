@@ -214,4 +214,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetBlock", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.Respons
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"hash":"00000000000000003f8d1861d035e44d4297c49bd2517dc0a44ad73c7091926c","confir
