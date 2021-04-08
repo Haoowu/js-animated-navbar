@@ -223,4 +223,6 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			bestblockhash, err := bitcoindClient
+			bestblockhash, err := bitcoindClient.GetBlock("00000000000000003f8d1861d035e44d4297c49bd2517dc0a44ad73c7091926c")
+			It("should not error", func() {
+		
