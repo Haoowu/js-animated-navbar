@@ -229,4 +229,7 @@ var _ = Describe("Bitcoind", func() {
 			})
 			It("should return", func() {
 				Expect(bestblockhash).Should(Equal(Block{
-					Hash:          "000000
+					Hash:          "00000000000000003f8d1861d035e44d4297c49bd2517dc0a44ad73c7091926c",
+					Confirmations: 503,
+					Size:          348678,
+					Height:      
