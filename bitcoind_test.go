@@ -236,4 +236,5 @@ var _ = Describe("Bitcoind", func() {
 					Version:       2,
 					Merkleroot:    "7867189c03d63d73624b2fab05009a270e15a53611a9efb6fac8fa61981229c9",
 					Tx: []string{
-						"d5
+						"d5de3d0622f7379d3e5afe67ff42336854e6b15a77e241fc13e77458bde32603",
+						"df8d461f53d509f0d0951df7251b5c63aa1c2380ca07ccb39d2cdd39338b2
