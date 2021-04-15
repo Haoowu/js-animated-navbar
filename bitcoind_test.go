@@ -232,4 +232,8 @@ var _ = Describe("Bitcoind", func() {
 					Hash:          "00000000000000003f8d1861d035e44d4297c49bd2517dc0a44ad73c7091926c",
 					Confirmations: 503,
 					Size:          348678,
-					Height:      
+					Height:        301043,
+					Version:       2,
+					Merkleroot:    "7867189c03d63d73624b2fab05009a270e15a53611a9efb6fac8fa61981229c9",
+					Tx: []string{
+						"d5
