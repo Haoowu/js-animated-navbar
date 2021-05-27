@@ -320,4 +320,6 @@ var _ = Describe("Bitcoind", func() {
 						"37f690c8b6b06e64c0a4a9c810cc77cee459362252c4ee4d9f37e9833ebf15d4",
 						"a209ce625aa54cfb1e80f5752c905d473659048019b29fcb421d26f5f3e5d66f",
 						"0260ceb76791f0e9af269a390cae6ce2f4b6f4dc0718b417f963706d1c337f2a",
-						"4ff4aa45aadb9df02bcaeccdf
+						"4ff4aa45aadb9df02bcaeccdf654efab9af26d8f76553c6ee1827cbfe6774df2",
+						"1383f5630919dec64efcdc812a8ade37c6f80eb053028c1654b490ee0c7f723a",
+					
