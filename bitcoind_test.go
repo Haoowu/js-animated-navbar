@@ -770,4 +770,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetBlockCount", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.Resp
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":301550,"error":null,"id":1400504046333414437}`)
+			})
+			ts, host, port, err := g
