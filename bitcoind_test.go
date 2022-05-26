@@ -763,4 +763,11 @@ var _ = Describe("Bitcoind", func() {
 					Chainwork:         "0000000000000000000000000000000000000000000062953a07577418d105fc",
 					Previousblockhash: "00000000000000001da7dd6cb6599cf16af1fbf60e0430305194f62404395856",
 					Nextblockhash:     "00000000000000004a5e2944fd7a0598f33749af168feeb2605d1606a78880d2",
-	
+				}))
+			})
+		})
+	})
+
+	Describe("Testing GetBlockCount", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.Resp
