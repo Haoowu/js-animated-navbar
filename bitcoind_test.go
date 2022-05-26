@@ -781,4 +781,12 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			blockCount, err := bitcoindClient.GetBlockCount()
 			It("should not error", func() {
-				Expect(err).NotTo(Hav
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return", func() {
+				Expect(blockCount).Should(BeNumerically("==", 301550))
+			})
+		})
+	})
+
+	Describe("
