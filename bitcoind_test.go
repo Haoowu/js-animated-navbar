@@ -761,4 +761,6 @@ var _ = Describe("Bitcoind", func() {
 					Bits:              "187c3053",
 					Difficulty:        8.8534163091278e+09,
 					Chainwork:         "0000000000000000000000000000000000000000000062953a07577418d105fc",
-					Previousblockhash: "00000000000000001da7
+					Previousblockhash: "00000000000000001da7dd6cb6599cf16af1fbf60e0430305194f62404395856",
+					Nextblockhash:     "00000000000000004a5e2944fd7a0598f33749af168feeb2605d1606a78880d2",
+	
