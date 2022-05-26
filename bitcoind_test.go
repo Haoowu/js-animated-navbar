@@ -757,4 +757,7 @@ var _ = Describe("Bitcoind", func() {
 						"75611060e49ed62c1027e1adfb915ec785241c706985e0fc49be28c9ec49a284",
 					},
 					Time:              1400247373,
-				
+					Nonce:             29860925,
+					Bits:              "187c3053",
+					Difficulty:        8.8534163091278e+09,
+					Chainwork
