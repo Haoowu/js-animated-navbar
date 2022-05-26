@@ -760,4 +760,5 @@ var _ = Describe("Bitcoind", func() {
 					Nonce:             29860925,
 					Bits:              "187c3053",
 					Difficulty:        8.8534163091278e+09,
-					Chainwork
+					Chainwork:         "0000000000000000000000000000000000000000000062953a07577418d105fc",
+					Previousblockhash: "00000000000000001da7
