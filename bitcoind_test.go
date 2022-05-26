@@ -778,4 +778,7 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := New(host, port, "x", "fa
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			blockCount, err := bitcoindClient.GetBlockCount()
+			It("should not error", func() {
+				Expect(err).NotTo(Hav
