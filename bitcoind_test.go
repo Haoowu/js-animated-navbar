@@ -789,4 +789,6 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("
+	Describe("Testing GetBlockHash", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Reques
