@@ -810,4 +810,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("Testing GetConnectionCount"
+	Describe("Testing GetConnectionCount", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fp
