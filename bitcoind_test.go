@@ -813,4 +813,6 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetConnectionCount", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fp
+				fmt.Fprintln(w, `{"result":64,"error":null,"id":1400515307439961792}`)
+			})
+			ts, host, port, err := getNewTestServer(handl
