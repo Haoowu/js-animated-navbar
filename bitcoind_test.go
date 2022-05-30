@@ -801,4 +801,8 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			blockCount, err := bitcoindClient.GetBlockHash(0)
-			
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return", func() {
+				Expect(block
