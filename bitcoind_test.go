@@ -834,4 +834,6 @@ var _ = Describe("Bitcoind", func() {
 	Describe("get difficulty", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.F
+				fmt.Fprintln(w, `{"result":8853416309.12779999,"error":null,"id":1400425780999713481}`)
+			})
+			ts, host, port, err := getNewTestServer(handl
