@@ -823,4 +823,12 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			connectionCount, err := bitcoindClient.GetConnectionCount()
 			It("should not error", func() {
-				Expect(err).NotTo(HaveOccurred(
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return", func() {
+				Expect(connectionCount).Should(BeNumerically("==", 64))
+			})
+		})
+	})
+
+	Describe("get diff
