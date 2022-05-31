@@ -831,4 +831,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("get diff
+	Describe("get difficulty", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.F
