@@ -836,4 +836,9 @@ var _ = Describe("Bitcoind", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 				fmt.Fprintln(w, `{"result":8853416309.12779999,"error":null,"id":1400425780999713481}`)
 			})
-			ts, host, port, err := getNewTestServer(handl
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", 
