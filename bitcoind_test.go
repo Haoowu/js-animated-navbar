@@ -848,4 +848,11 @@ var _ = Describe("Bitcoind", func() {
 			})
 
 			It("should return float64 8853416309.12779999", func() {
-				Expect(difficulty).Should(BeNumerically("=="
+				Expect(difficulty).Should(BeNumerically("==", 8853416309.12779999))
+			})
+		})
+	})
+
+	Describe("Testing GetGenerate", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(fu
