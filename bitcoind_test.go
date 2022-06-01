@@ -841,4 +841,7 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := New(host, port, "x", 
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			difficulty, err := bitcoindClient.GetDifficulty()
+			It("should not error", func() {
+				Expect(err
