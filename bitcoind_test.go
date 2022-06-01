@@ -844,4 +844,8 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			difficulty, err := bitcoindClient.GetDifficulty()
 			It("should not error", func() {
-				Expect(err
+				Expect(err).NotTo(HaveOccurred())
+			})
+
+			It("should return float64 8853416309.12779999", func() {
+				Expect(difficulty).Should(BeNumerically("=="
