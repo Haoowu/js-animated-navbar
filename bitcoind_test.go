@@ -855,4 +855,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetGenerate", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(fu
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":false,"error":null,"id":1400564115387666493}`)
+			})
+			ts, h
