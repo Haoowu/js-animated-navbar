@@ -870,4 +870,11 @@ var _ = Describe("Bitcoind", func() {
 			})
 
 			It("should return bool false", func() {
-				Expect(generate).Should
+				Expect(generate).Should(BeFalse())
+			})
+		})
+	})
+
+	Describe("Testing GetHashesPerSec", func() {
+		Context("when success", func() {
+			handler := http.Han
