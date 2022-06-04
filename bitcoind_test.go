@@ -865,4 +865,9 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			generate, err := bitcoindClient.GetGenerate()
-			It("should not error", func() 
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+
+			It("should return bool false", func() {
+				Expect(generate).Should
