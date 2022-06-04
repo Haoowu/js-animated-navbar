@@ -877,4 +877,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetHashesPerSec", func() {
 		Context("when success", func() {
-			handler := http.Han
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":0,"error":null,"id":1400564491799978781}`)
+			})
+			t
