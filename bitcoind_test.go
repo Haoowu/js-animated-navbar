@@ -891,4 +891,11 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should return int 0", func() {
-				Expect(generate).Should(BeNumerically
+				Expect(generate).Should(BeNumerically("==", 0))
+			})
+		})
+	})
+
+	Describe("Testing GetInfo", func() {
+		Context("when success", func() {
+			handler := http.HandlerF
