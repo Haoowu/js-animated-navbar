@@ -898,4 +898,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetInfo", func() {
 		Context("when success", func() {
-			handler := http.HandlerF
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"version":99900,"protocolversion":70002,"walletversion"
