@@ -887,4 +887,8 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			generate, err := bitcoindClient.GetHashesPerSec()
-			It("should not error", func
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return int 0", func() {
+				Expect(generate).Should(BeNumerically
