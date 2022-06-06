@@ -914,4 +914,9 @@ var _ = Describe("Bitcoind", func() {
 			It("should return", func() {
 				Expect(rinfo).Should(Equal(Info{
 					Version:         99900,
-					Protocolversion:
+					Protocolversion: 70002,
+					Walletversion:   60000,
+					Balance:         0,
+					Blocks:          301573,
+					Timeoffset:      0,
+					Connect
