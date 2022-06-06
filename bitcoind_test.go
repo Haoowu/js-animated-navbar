@@ -909,4 +909,9 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			rinfo, err := bitcoindClient.GetInfo()
 			It("should not error", func() {
-				Expect(err).NotTo(HaveOccurred
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return", func() {
+				Expect(rinfo).Should(Equal(Info{
+					Version:         99900,
+					Protocolversion:
