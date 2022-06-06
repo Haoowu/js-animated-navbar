@@ -901,3 +901,9 @@ var _ = Describe("Bitcoind", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 				fmt.Fprintln(w, `{"result":{"version":99900,"protocolversion":70002,"walletversion":60000,"balance":0.00000000,"blocks":301573,"timeoffset":0,"connections":61,"proxy":"","difficulty":8853416309.12779999,"testnet":false,"keypoololdest":1399795067,"keypoolsize":101,"unlocked_until":1400519823,"paytxfee":0.00000000,"relayfee":0.00001000,"errors":"This is a pre-release test build - use at your own risk - do not use for mining or merchant applications"},"error":null,"id":1400516286899658573}`)
 			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer ts.Close()
+			bitcoindClient, _ := New(hos
