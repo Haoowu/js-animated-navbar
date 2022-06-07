@@ -923,4 +923,8 @@ var _ = Describe("Bitcoind", func() {
 					Proxy:           "",
 					Difficulty:      8.8534163091278e+09,
 					Testnet:         false,
-			
+					Keypoololdest:   1399795067,
+					KeypoolSize:     101,
+					UnlockedUntil:   1400519823,
+					Paytxfee:        0,
+					Rela
