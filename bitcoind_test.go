@@ -919,4 +919,8 @@ var _ = Describe("Bitcoind", func() {
 					Balance:         0,
 					Blocks:          301573,
 					Timeoffset:      0,
-					Connect
+					Connections:     61,
+					Proxy:           "",
+					Difficulty:      8.8534163091278e+09,
+					Testnet:         false,
+			
