@@ -927,4 +927,5 @@ var _ = Describe("Bitcoind", func() {
 					KeypoolSize:     101,
 					UnlockedUntil:   1400519823,
 					Paytxfee:        0,
-					Rela
+					Relayfee:        1e-05,
+					Errors:          "This is a pre-release test build - use at your own risk - do not use for mining or merchant applications
