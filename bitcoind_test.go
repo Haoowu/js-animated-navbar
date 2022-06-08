@@ -946,4 +946,8 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			rinfo, err := bitcoindClient.GetMiningInfo()
-			It("s
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return", func() {
+				Expect(rinfo).Should(Equal(MiningI
