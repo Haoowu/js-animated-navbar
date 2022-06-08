@@ -936,4 +936,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetMiningInfo", func() {
 		Context("when success", func() {
-			handler :
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"blocks":301676,"currentblocksize":717621,
