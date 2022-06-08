@@ -928,4 +928,12 @@ var _ = Describe("Bitcoind", func() {
 					UnlockedUntil:   1400519823,
 					Paytxfee:        0,
 					Relayfee:        1e-05,
-					Errors:          "This is a pre-release test build - use at your own risk - do not use for mining or merchant applications
+					Errors:          "This is a pre-release test build - use at your own risk - do not use for mining or merchant applications",
+				}))
+			})
+		})
+	})
+
+	Describe("Testing GetMiningInfo", func() {
+		Context("when success", func() {
+			handler :
