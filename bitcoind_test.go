@@ -954,4 +954,5 @@ var _ = Describe("Bitcoind", func() {
 					Blocks:           301676,
 					CurrentBlocksize: 717621,
 					CurrentBlockTx:   1043,
-					Difficulty:       8.8534163
+					Difficulty:       8.8534163091278e+09,
+					Errors:           "This is a pre-release test build - use at your own risk - do not use for mining or merchant ap
