@@ -983,4 +983,10 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 
-			It("should return string 1LU69m5ErR3RTKACZA644GqW8gK7ks7khr",
+			It("should return string 1LU69m5ErR3RTKACZA644GqW8gK7ks7khr", func() {
+				Expect(newAddress).To(Equal("1LU69m5ErR3RTKACZA644GqW8gK7ks7khr"))
+			})
+		})
+	})
+
+	Describe("Testing GetAddressesByAccount", 
