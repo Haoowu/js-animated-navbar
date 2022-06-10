@@ -959,4 +959,12 @@ var _ = Describe("Bitcoind", func() {
 					GenProcLimit:     -1,
 					NetworkHashps:    78721394769785312,
 					PooledtTx:        1892,
-					Testn
+					Testnet:          false,
+					Generate:         false,
+					HashesPersec:     0,
+				}))
+			})
+		})
+	})
+
+	Describe("Testing GetNewAddr
