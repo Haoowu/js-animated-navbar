@@ -955,4 +955,8 @@ var _ = Describe("Bitcoind", func() {
 					CurrentBlocksize: 717621,
 					CurrentBlockTx:   1043,
 					Difficulty:       8.8534163091278e+09,
-					Errors:           "This is a pre-release test build - use at your own risk - do not use for mining or merchant ap
+					Errors:           "This is a pre-release test build - use at your own risk - do not use for mining or merchant applications",
+					GenProcLimit:     -1,
+					NetworkHashps:    78721394769785312,
+					PooledtTx:        1892,
+					Testn
