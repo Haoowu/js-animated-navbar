@@ -989,4 +989,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("Testing GetAddressesByAccount", 
+	Describe("Testing GetAddressesByAccount", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w,
