@@ -1012,4 +1012,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetPeerInfo", func() {
 		Context("when success", func() {
-			handler := http.Han
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":[{"addr":"37.187.58.89:8333","addrlocal":
