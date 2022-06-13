@@ -1013,4 +1013,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetPeerInfo", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":[{"addr":"37.187.58.89:8333","addrlocal":"92.222.29.108:8333","services":"00000001","lastsend":1400575696,"lastrecv":1400575696,"bytessent":66907113,"bytesrecv":65925257,"conntime":1399838910,"pingtime":0.00000000,"version":70002,"subver":"/Satoshi:0.9.1/","inbound":false,"startingheight":300264,"banscore":0,"
+				fmt.Fprintln(w, `{"result":[{"addr":"37.187.58.89:8333","addrlocal":"92.222.29.108:8333","services":"00000001","lastsend":1400575696,"lastrecv":1400575696,"bytessent":66907113,"bytesrecv":65925257,"conntime":1399838910,"pingtime":0.00000000,"version":70002,"subver":"/Satoshi:0.9.1/","inbound":false,"startingheight":300264,"banscore":0,"syncnode":false},{"addr":"95.85.58.214:8333","addrlocal":"92.222.29.108:8333","services":"00000001","lastsend":1400575696,"lastrecv":1400
