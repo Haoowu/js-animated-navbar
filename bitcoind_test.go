@@ -1023,4 +1023,9 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			peerInfo, err := bitcoindClient.GetPeerInfo()
 			It("should not error", func() {
-				Expect(err).NotTo(HaveOcc
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return", func() {
+				Expect(peerInfo).Should(Equal([]Peer{{
+					Addr:           "37.187.58.89:8333",
+					Ad
