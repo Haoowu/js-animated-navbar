@@ -1028,4 +1028,8 @@ var _ = Describe("Bitcoind", func() {
 			It("should return", func() {
 				Expect(peerInfo).Should(Equal([]Peer{{
 					Addr:           "37.187.58.89:8333",
-					Ad
+					Addrlocal:      "92.222.29.108:8333",
+					Services:       "00000001",
+					Lastsend:       1400575696,
+					Lastrecv:       1400575696,
+				
