@@ -1020,4 +1020,7 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := N
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			peerInfo, err := bitcoindClient.GetPeerInfo()
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOcc
