@@ -1041,4 +1041,10 @@ var _ = Describe("Bitcoind", func() {
 					Subver:         "/Satoshi:0.9.1/",
 					Inbound:        false,
 					Startingheight: 300264,
-					Banscore:      
+					Banscore:       0,
+					Syncnode:       false,
+				},
+					{
+						Addr:           "95.85.58.214:8333",
+						Addrlocal:      "92.222.29.108:8333",
+						Service
