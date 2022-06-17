@@ -1047,4 +1047,8 @@ var _ = Describe("Bitcoind", func() {
 					{
 						Addr:           "95.85.58.214:8333",
 						Addrlocal:      "92.222.29.108:8333",
-						Service
+						Services:       "00000001",
+						Lastsend:       1400575696,
+						Lastrecv:       1400575691,
+						Bytessent:      63076705,
+					
