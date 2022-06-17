@@ -1055,4 +1055,8 @@ var _ = Describe("Bitcoind", func() {
 						Conntime:       1399875128,
 						Pingtime:       0,
 						Pingwait:       0,
-						Version:   
+						Version:        70001,
+						Subver:         "/Satoshi:0.8.5/",
+						Inbound:        false,
+						Startingheight: 300327,
+						Banscore:  
