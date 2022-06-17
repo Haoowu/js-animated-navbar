@@ -1051,4 +1051,8 @@ var _ = Describe("Bitcoind", func() {
 						Lastsend:       1400575696,
 						Lastrecv:       1400575691,
 						Bytessent:      63076705,
-					
+						Bytesrecv:      44013223,
+						Conntime:       1399875128,
+						Pingtime:       0,
+						Pingwait:       0,
+						Version:   
