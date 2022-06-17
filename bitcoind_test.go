@@ -1059,4 +1059,12 @@ var _ = Describe("Bitcoind", func() {
 						Subver:         "/Satoshi:0.8.5/",
 						Inbound:        false,
 						Startingheight: 300327,
-						Banscore:  
+						Banscore:       0,
+						Syncnode:       false,
+					}}))
+			})
+		})
+	})
+
+	Describe("Testing GetRawChangeAddress", func() {
+		Context("
