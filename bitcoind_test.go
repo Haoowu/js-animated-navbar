@@ -1069,4 +1069,6 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetRawChangeAddress", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":"1FK4n2m3zS
+				fmt.Fprintln(w, `{"result":"1FK4n2m3zSTqZCzyoWuPxAu97tPUC4363x","error":null,"id":1400598255575594989}`)
+			})
+			ts, host, port, err := getNewTestServer(handler
