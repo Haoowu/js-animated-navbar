@@ -1067,4 +1067,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing GetRawChangeAddress", func() {
-		Context("
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":"1FK4n2m3zS
