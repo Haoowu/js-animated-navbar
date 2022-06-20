@@ -1090,4 +1090,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetRawMempool", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.ResponseWriter, r *ht
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":["00010589f7c108a4fd546df03a17bf485ede3baf52b35ddd5b83e974ec360abf","000a5d
