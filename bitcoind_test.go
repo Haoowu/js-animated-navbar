@@ -1082,4 +1082,7 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 
-			I
+			It("should return string 1FK4n2m3zSTqZCzyoWuPxAu97tPUC4363x", func() {
+				Expect(rawAddress).To(Equal("1FK4n2m3zSTqZCzyoWuPxAu97tPUC4363x"))
+			})
+		})
