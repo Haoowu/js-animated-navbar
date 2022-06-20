@@ -1086,3 +1086,8 @@ var _ = Describe("Bitcoind", func() {
 				Expect(rawAddress).To(Equal("1FK4n2m3zSTqZCzyoWuPxAu97tPUC4363x"))
 			})
 		})
+	})
+
+	Describe("Testing GetRawMempool", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *ht
