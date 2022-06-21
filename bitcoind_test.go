@@ -1105,3 +1105,4 @@ var _ = Describe("Bitcoind", func() {
 			})
 
 			It("should return []string", func() {
+				Expect(txIds).To(Equal([]string{"00010589f7c108a4fd546df03a17bf485ede3baf52b35ddd5b83e974ec360abf", "000a5dba637e02b2e377
