@@ -1112,4 +1112,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetRawTransaction", func() {
 		Context("when success for verbose is false", func() {
-			handler := http.H
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":"01000000018054dfd3011da441f52d237c951bcc
