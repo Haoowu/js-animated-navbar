@@ -1121,4 +1121,6 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			txIds, err := bitcoindClient.
+			txIds, err := bitcoindClient.GetRawTransaction("00010589f7c108a4fd546df03a17bf485ede3baf52b35ddd5b83e974ec360abf", false)
+			It("should not error", func() {
+				Expect(err).NotT
