@@ -1130,4 +1130,5 @@ var _ = Describe("Bitcoind", func() {
 			})
 		})
 		Context("when success for verbose = 1", func() {
-			handler := http.HandlerFunc(func(w http.Response
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"hex":"01000000018054dfd3011da441f52d237c951bcc89be8c00ac77404c479
