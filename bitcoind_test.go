@@ -1145,4 +1145,4 @@ var _ = Describe("Bitcoind", func() {
 			})
 			It("should return RawTX", func() {
 				Expect(txIds).To(Equal(RawTransaction{
-					Hex: 
+					Hex:      "01000000018054dfd3011da441f52d237c951bcc89be8c00ac77404c4797f4d8d7884c0cab000000006a473044022032771ee953e3c7809f57179dfb8d58eb4e47fb8721441174
