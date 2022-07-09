@@ -1152,4 +1152,7 @@ var _ = Describe("Bitcoind", func() {
 					Vin: []Vin{
 						{
 							Coinbase: "",
-							Txid:     "ab0c4c88d7d8f4
+							Txid:     "ab0c4c88d7d8f497474c4077ac008cbe89cc1b957c232df541a41d01d3df5480",
+							Vout:     0,
+							ScriptSig: ScriptSig{
+								Asm: "3044022032771ee
