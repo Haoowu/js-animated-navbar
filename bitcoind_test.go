@@ -1155,4 +1155,4 @@ var _ = Describe("Bitcoind", func() {
 							Txid:     "ab0c4c88d7d8f497474c4077ac008cbe89cc1b957c232df541a41d01d3df5480",
 							Vout:     0,
 							ScriptSig: ScriptSig{
-								Asm: "3044022032771ee
+								Asm: "3044022032771ee953e3c7809f57179dfb8d58eb4e47fb8721441174325a3e3008c11c8102200b436200ab9d006aab87c8595749da9c03e4490179401de9b5c281cfa5e658c401 03bfde0ae35e6a
