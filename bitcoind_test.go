@@ -1168,4 +1168,10 @@ var _ = Describe("Bitcoind", func() {
 								Asm:       "OP_DUP OP_HASH160 e5344f52ecc92c279028a851c9d8ed57bb5dfc60 OP_EQUALVERIFY OP_CHECKSIG",
 								Hex:       "76a914e5344f52ecc92c279028a851c9d8ed57bb5dfc6088ac",
 								ReqSigs:   1,
-								Type:      "pubk
+								Type:      "pubkeyhash",
+								Addresses: []string{"1MtvQUx6A8y9tQVfQ2VEFFNVPSUuQ7gfzG"},
+							},
+						},
+						{
+							Value: 0.01492249,
+							N: 
