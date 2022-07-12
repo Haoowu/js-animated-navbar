@@ -1183,4 +1183,7 @@ var _ = Describe("Bitcoind", func() {
 								Addresses: []string{"15hqpQ8jWt6276WPuLuJyyXgLQHBeHJXsH"},
 							},
 						}},
-					BlockHash:     "0000000000000000
+					BlockHash:     "000000000000000043489f0db359cdb3434f1464e176507916264cb07bbdb581",
+					Confirmations: 5,
+					Time:          1400597099,
+					Blo
