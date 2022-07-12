@@ -1194,4 +1194,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing GetReceivedByAccount", func() {
-		Context("when success", 
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":0.03330000,"error":null,"id
