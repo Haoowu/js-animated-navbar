@@ -1180,4 +1180,7 @@ var _ = Describe("Bitcoind", func() {
 								Hex:       "76a9143399e4655281f5dbb3e157930c724dd3e748a42088ac",
 								ReqSigs:   1,
 								Type:      "pubkeyhash",
-								A
+								Addresses: []string{"15hqpQ8jWt6276WPuLuJyyXgLQHBeHJXsH"},
+							},
+						}},
+					BlockHash:     "0000000000000000
