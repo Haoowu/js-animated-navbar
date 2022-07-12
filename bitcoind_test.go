@@ -1186,4 +1186,12 @@ var _ = Describe("Bitcoind", func() {
 					BlockHash:     "000000000000000043489f0db359cdb3434f1464e176507916264cb07bbdb581",
 					Confirmations: 5,
 					Time:          1400597099,
-					Blo
+					Blocktime:     1400597099,
+				},
+				))
+			})
+		})
+	})
+
+	Describe("Testing GetReceivedByAccount", func() {
+		Context("when success", 
