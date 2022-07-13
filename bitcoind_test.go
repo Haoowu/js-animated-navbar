@@ -1217,4 +1217,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetReceivedByAddress", func() {
 		Context("when success", func() {
-			handler := http.Ha
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":0.03330000,"error":null,"id":1400605
