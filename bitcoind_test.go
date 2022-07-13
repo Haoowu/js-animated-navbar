@@ -1231,4 +1231,11 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 
-			It("should re
+			It("should return float64", func() {
+				Expect(amount).Should(BeNumerically("==", 0.03330000))
+			})
+		})
+	})
+
+	Describe("Testing GetTransaction", func() {
+		Co
