@@ -1210,4 +1210,11 @@ var _ = Describe("Bitcoind", func() {
 			})
 
 			It("should return float64", func() {
-				Expect(amount).Should(BeNumerically("==",
+				Expect(amount).Should(BeNumerically("==", 0.03330000))
+			})
+		})
+	})
+
+	Describe("Testing GetReceivedByAddress", func() {
+		Context("when success", func() {
+			handler := http.Ha
