@@ -1196,4 +1196,10 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetReceivedByAccount", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":0.03330000,"error":null,"id
+				fmt.Fprintln(w, `{"result":0.03330000,"error":null,"id":1400605425098801061}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer ts.Clos
