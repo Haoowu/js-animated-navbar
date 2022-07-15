@@ -1238,4 +1238,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing GetTransaction", func() {
-		Co
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result"
