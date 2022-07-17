@@ -1250,4 +1250,9 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			transaction, err := bitcoindClient.GetTransaction("a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515")
 			It("should not error", func() {
-				Expect(err).NotTo
+				Expect(err).NotTo(HaveOccurred())
+			})
+
+			It("should return Transaction", func() {
+				Expect(transaction).Should(Equal(Transaction{
+					Amount:          
