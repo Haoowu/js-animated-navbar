@@ -1264,4 +1264,9 @@ var _ = Describe("Bitcoind", func() {
 					BlockHash:       "",
 					BlockIndex:      0,
 					BlockTime:       0,
-					TxID:            "a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515"
+					TxID:            "a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515",
+					WalletConflicts: []string{},
+					Time:            1400652519,
+					TimeReceived:    1400652519,
+					Details: []TransactionDetails{
+			
