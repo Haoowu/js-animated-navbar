@@ -1281,3 +1281,8 @@ var _ = Describe("Bitcoind", func() {
 				}))
 			})
 		})
+	})
+
+	Describe("Testing GetTransaction with label", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func
