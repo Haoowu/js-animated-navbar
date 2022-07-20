@@ -1285,4 +1285,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetTransaction with label", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"amount":0.00010000,"confirmatio
