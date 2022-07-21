@@ -1303,4 +1303,10 @@ var _ = Describe("Bitcoind", func() {
 				Expect(transaction).Should(Equal(Transaction{
 					Amount:          0.0001,
 					Account:         "",
-					Address:    
+					Address:         "",
+					Category:        "",
+					Fee:             0,
+					Confirmations:   0,
+					BlockHash:       "",
+					BlockIndex:      0,
+					
