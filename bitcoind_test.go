@@ -1286,4 +1286,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetTransaction with label", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":{"amount":0.00010000,"confirmations":0,"txid":"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515","walletconflicts":[],"time":1400652519,"timereceived":1400652519,"details":[{"account":"tests","address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","category":"receive","amo
+				fmt.Fprintln(w, `{"result":{"amount":0.00010000,"confirmations":0,"txid":"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515","walletconflicts":[],"time":1400652519,"timereceived":1400652519,"details":[{"account":"tests","address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","category":"receive","amount":0.00010000,"label":"some-detail"}],"hex":"0100000001445a669dcbd348cf67608c4569fcc19cd00e9034974fa7532241486ce8e7dbde010000006b483045022100cc82d62
