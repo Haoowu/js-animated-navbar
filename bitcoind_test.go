@@ -1294,4 +1294,9 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			transaction, err := bitcoindClient.GetTransaction("a1b7093d041bc1b763ba1ad894d2bd53
+			transaction, err := bitcoindClient.GetTransaction("a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+
+			It("should return Transactio
