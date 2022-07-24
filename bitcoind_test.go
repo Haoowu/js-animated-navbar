@@ -1321,3 +1321,7 @@ var _ = Describe("Bitcoind", func() {
 							Category: "receive",
 							Amount:   0.0001,
 							Fee:      0,
+							Label:    "some-detail",
+						},
+					},
+					Hex: "0100000001445a669dcbd348cf67608c4569fcc19cd00e9034974fa7
