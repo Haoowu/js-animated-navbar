@@ -1316,4 +1316,8 @@ var _ = Describe("Bitcoind", func() {
 					TimeReceived:    1400652519,
 					Details: []TransactionDetails{
 						{
-							Acc
+							Account:  "tests",
+							Address:  "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy",
+							Category: "receive",
+							Amount:   0.0001,
+							Fee:      0,
