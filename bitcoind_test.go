@@ -1333,4 +1333,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetTxOut", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			
+				fmt.Fprintln(w, `{"result":{"bestblock":"00000000000000005fc5487bb67b58573eef3ba369972f6acfc5240cf375878f","confirmations":7,"value":0.0001
