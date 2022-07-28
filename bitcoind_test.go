@@ -1330,4 +1330,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	D
+	Describe("Testing GetTxOut", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			
