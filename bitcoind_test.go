@@ -1333,4 +1333,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetTxOut", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":{"bestblock":"00000000000000005fc5487bb67b58573eef3ba369972f6acfc5240cf375878f","confirmations":7,"value":0.00010000,"scriptPubKey":{"asm":"OP_DUP OP_HASH160 fc0d1e43cea1c5df928971f8add5d67ce4313003 OP_EQUALVERIFY OP_CHECKSIG","hex":"76a
+				fmt.Fprintln(w, `{"result":{"bestblock":"00000000000000005fc5487bb67b58573eef3ba369972f6acfc5240cf375878f","confirmations":7,"value":0.00010000,"scriptPubKey":{"asm":"OP_DUP OP_HASH160 fc0d1e43cea1c5df928971f8add5d67ce4313003 OP_EQUALVERIFY OP_CHECKSIG","hex":"76a914fc0d1e43cea1c5df928971f8add5d67ce431300388ac","reqSigs":1,"type":"pubkeyhash","addresses":["1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy"]},"version"
