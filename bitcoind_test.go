@@ -1342,4 +1342,10 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			uTxOut, err := bitcoindClient.GetTxOut("a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515", 1, false)
-			It("should not error", func(
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+
+			It("should return UTransactionOut", func() {
+				Expect(uTxOut).Should(Equal(UTransactionOut{
+	
