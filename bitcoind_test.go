@@ -1348,4 +1348,6 @@ var _ = Describe("Bitcoind", func() {
 
 			It("should return UTransactionOut", func() {
 				Expect(uTxOut).Should(Equal(UTransactionOut{
-	
+					Bestblock:     "00000000000000005fc5487bb67b58573eef3ba369972f6acfc5240cf375878f",
+					Confirmations: 7,
+					Value:      
