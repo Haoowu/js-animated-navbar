@@ -1352,4 +1352,6 @@ var _ = Describe("Bitcoind", func() {
 					Confirmations: 7,
 					Value:         0.0001,
 					ScriptPubKey: ScriptPubKey{
-						Asm:       "OP_DUP OP_HASH160 fc0d1e43cea1c5df928971f8add5d67ce431
+						Asm:       "OP_DUP OP_HASH160 fc0d1e43cea1c5df928971f8add5d67ce4313003 OP_EQUALVERIFY OP_CHECKSIG",
+						Hex:       "76a914fc0d1e43cea1c5df928971f8add5d67ce431300388ac",
+						ReqSigs
