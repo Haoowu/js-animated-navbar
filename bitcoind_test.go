@@ -1350,4 +1350,6 @@ var _ = Describe("Bitcoind", func() {
 				Expect(uTxOut).Should(Equal(UTransactionOut{
 					Bestblock:     "00000000000000005fc5487bb67b58573eef3ba369972f6acfc5240cf375878f",
 					Confirmations: 7,
-					Value:      
+					Value:         0.0001,
+					ScriptPubKey: ScriptPubKey{
+						Asm:       "OP_DUP OP_HASH160 fc0d1e43cea1c5df928971f8add5d67ce431
