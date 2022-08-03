@@ -1358,4 +1358,13 @@ var _ = Describe("Bitcoind", func() {
 						Type:      "pubkeyhash",
 						Addresses: []string{"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy"},
 					},
-					Version
+					Version:  1,
+					Coinbase: false,
+				}))
+			})
+		})
+	})
+
+	Describe("Testing GetTxOutsetInfo", func() {
+		Context("when success", func() {
+	
