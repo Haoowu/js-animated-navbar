@@ -1367,4 +1367,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing GetTxOutsetInfo", func() {
 		Context("when success", func() {
-	
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"height":301911,"best
