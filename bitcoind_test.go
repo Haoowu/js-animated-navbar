@@ -1354,4 +1354,8 @@ var _ = Describe("Bitcoind", func() {
 					ScriptPubKey: ScriptPubKey{
 						Asm:       "OP_DUP OP_HASH160 fc0d1e43cea1c5df928971f8add5d67ce4313003 OP_EQUALVERIFY OP_CHECKSIG",
 						Hex:       "76a914fc0d1e43cea1c5df928971f8add5d67ce431300388ac",
-						ReqSigs
+						ReqSigs:   1,
+						Type:      "pubkeyhash",
+						Addresses: []string{"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy"},
+					},
+					Version
