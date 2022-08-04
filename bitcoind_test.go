@@ -1368,4 +1368,10 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetTxOutsetInfo", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":{"height":301911,"bestblock":"00000000000000000844a8f3d18bc55f08d591fabc4e8d3ac0105e4974538cf2","transactions":3212087,"txouts":11028067,"bytes_serialized":382233349,"hash_serialized":"6aa4a70a010a7ac8e41e335007ee2f7cfb81db2bd1093bc27663aed55e6fc001","total_amount":12797639.79102867},"error":null,"id":14006
+				fmt.Fprintln(w, `{"result":{"height":301911,"bestblock":"00000000000000000844a8f3d18bc55f08d591fabc4e8d3ac0105e4974538cf2","transactions":3212087,"txouts":11028067,"bytes_serialized":382233349,"hash_serialized":"6aa4a70a010a7ac8e41e335007ee2f7cfb81db2bd1093bc27663aed55e6fc001","total_amount":12797639.79102867},"error":null,"id":1400681203212312585}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer ts.Close(
