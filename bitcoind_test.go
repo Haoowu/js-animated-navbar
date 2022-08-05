@@ -1387,4 +1387,9 @@ var _ = Describe("Bitcoind", func() {
 					Bestblock:       "00000000000000000844a8f3d18bc55f08d591fabc4e8d3ac0105e4974538cf2",
 					Transactions:    3.212087e+06,
 					TxOuts:          1.1028067e+07,
-					BytesSerialized: 3.82233349e+08
+					BytesSerialized: 3.82233349e+08,
+					HashSerialized:  "6aa4a70a010a7ac8e41e335007ee2f7cfb81db2bd1093bc27663aed55e6fc001",
+					TotalAmount:     1.279763979102867e+07,
+				}))
+			})
+	
