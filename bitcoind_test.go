@@ -1382,4 +1382,6 @@ var _ = Describe("Bitcoind", func() {
 			})
 
 			It("should return a TransactionOutSet", func() {
-				Expect(a
+				Expect(amount).Should(Equal(TransactionOutSet{
+					Height:          301911,
+					Bestblock:       "00000000000000000844a8f3d18bc55f0
