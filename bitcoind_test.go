@@ -1399,4 +1399,4 @@ var _ = Describe("Bitcoind", func() {
 		Context("when success", func() {
 			Context("without data parameter", func() {
 				handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-					fmt.Fprintln(w, `{"result":{"midstate":"
+					fmt.Fprintln(w, `{"result":{"midstate":"5e743ccc47f96cb11d2971a3a97c51180e5f1830e23b4f708a3ed074c92c225f","data":"00000002f5cef24cdda03a94bbf39d281641dfa5b0a949c30bf83f63
