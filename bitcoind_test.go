@@ -1392,4 +1392,9 @@ var _ = Describe("Bitcoind", func() {
 					TotalAmount:     1.279763979102867e+07,
 				}))
 			})
-	
+		})
+	})
+
+	Describe("Testing GetWork", func() {
+		Context("when success", func() {
+			Context("without data parameter", func() {
