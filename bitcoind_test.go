@@ -1398,3 +1398,5 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing GetWork", func() {
 		Context("when success", func() {
 			Context("without data parameter", func() {
+				handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+					fmt.Fprintln(w, `{"result":{"midstate":"
