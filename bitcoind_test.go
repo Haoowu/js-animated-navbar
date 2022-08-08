@@ -1411,4 +1411,6 @@ var _ = Describe("Bitcoind", func() {
 				It("should not error", func() {
 					Expect(err).NotTo(HaveOccurred())
 				})
-				It(
+				It("should return a Work ", func() {
+					Expect(amount).Should(Equal(Work{
+						Midstate: "5e743ccc47f96cb11d2971a3a97c51180e5f1830e23b4f708a3ed074c92
