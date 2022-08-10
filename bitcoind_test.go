@@ -1420,4 +1420,6 @@ var _ = Describe("Bitcoind", func() {
 					}))
 				})
 			})
-			Context("with data 
+			Context("with data parameter", func() {
+				handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+					fmt.Fprintln(w, `{"result
