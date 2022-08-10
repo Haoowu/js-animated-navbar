@@ -1422,4 +1422,7 @@ var _ = Describe("Bitcoind", func() {
 			})
 			Context("with data parameter", func() {
 				handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-					fmt.Fprintln(w, `{"result
+					fmt.Fprintln(w, `{"result":false,"error":null,"id":1400699245872721725}`)
+				})
+				ts, host, port, err := getNewTestServer(handler)
+				if err != 
