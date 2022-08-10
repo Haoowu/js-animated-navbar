@@ -1413,4 +1413,5 @@ var _ = Describe("Bitcoind", func() {
 				})
 				It("should return a Work ", func() {
 					Expect(amount).Should(Equal(Work{
-						Midstate: "5e743ccc47f96cb11d2971a3a97c51180e5f1830e23b4f708a3ed074c92
+						Midstate: "5e743ccc47f96cb11d2971a3a97c51180e5f1830e23b4f708a3ed074c92c225f",
+						Data:     "00000002f5cef24cdda03a94bbf39d281641dfa5b0a949c30bf83f6300000000000000004f3f40016ec1623897048811826238d8f66fd4f064a0d
