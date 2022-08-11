@@ -1425,4 +1425,9 @@ var _ = Describe("Bitcoind", func() {
 					fmt.Fprintln(w, `{"result":false,"error":null,"id":1400699245872721725}`)
 				})
 				ts, host, port, err := getNewTestServer(handler)
-				if err != 
+				if err != nil {
+					log.Fatalln(err)
+				}
+				defer ts.Close()
+				bitcoindClient, _ := New(host, port, "x", "fake", false)
+				amount, err := bitc
