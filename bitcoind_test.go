@@ -1434,4 +1434,11 @@ var _ = Describe("Bitcoind", func() {
 				It("should not error", func() {
 					Expect(err).NotTo(HaveOccurred())
 				})
-				It("should return a boolean
+				It("should return a boolean ", func() {
+					Expect(amount).Should(BeFalse())
+				})
+			})
+		})
+	})
+
+	Describe("Testing ImportPrivKey", func(
