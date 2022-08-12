@@ -1430,4 +1430,4 @@ var _ = Describe("Bitcoind", func() {
 				}
 				defer ts.Close()
 				bitcoindClient, _ := New(host, port, "x", "fake", false)
-				amount, err := bitc
+				amount, err := bitcoindClient.GetWork("00000002f5cef24cdda03a94bbf39d281641dfa5b0a949c30bf83f6300000000000000004f3f40016ec1623897048811826238d8f66fd4f064a0d8eaff4eb057b337b404537
