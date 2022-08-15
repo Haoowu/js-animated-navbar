@@ -1479,4 +1479,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing ListAccounts", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(fu
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"":0.00000000,"1KU5DX7jKECLx
