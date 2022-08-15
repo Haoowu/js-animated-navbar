@@ -1444,4 +1444,7 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ImportPrivKey", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1400733431937435587}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil
