@@ -1469,4 +1469,10 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := New(host, port, "x", "fake", fals
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			err = bitcoindClient.KeyPoolRefill()
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+		})
+	
