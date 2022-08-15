@@ -1475,4 +1475,8 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 		})
-	
+	})
+
+	Describe("Testing ListAccounts", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(fu
