@@ -1455,3 +1455,10 @@ var _ = Describe("Bitcoind", func() {
 			err = bitcoindClient.ImportPrivKey("fakeprivkey", "imported from mars", true)
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
+			})
+		})
+	})
+
+	Describe("Testing KeyPoolRefill", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.Respo
