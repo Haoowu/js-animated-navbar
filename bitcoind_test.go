@@ -1461,4 +1461,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing KeyPoolRefill", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.Respo
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1400733431937435588}`)
+			})
+			ts, host, port, err := getNew
