@@ -1490,4 +1490,8 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			accounts, err := bitcoindClient.ListAccounts(4)
 			It("should not error", func() {
-				E
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("shoul be a map", func() {
+				eAccounts := make(map[string]float64)
+				eAccounts[""] =
