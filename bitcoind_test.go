@@ -1494,4 +1494,7 @@ var _ = Describe("Bitcoind", func() {
 			})
 			It("shoul be a map", func() {
 				eAccounts := make(map[string]float64)
-				eAccounts[""] =
+				eAccounts[""] = 0
+				eAccounts["1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3"] = 0
+				eAccounts["imported from space"] = 0
+				eAccounts["tests"]
