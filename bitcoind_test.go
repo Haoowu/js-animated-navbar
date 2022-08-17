@@ -1497,4 +1497,11 @@ var _ = Describe("Bitcoind", func() {
 				eAccounts[""] = 0
 				eAccounts["1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3"] = 0
 				eAccounts["imported from space"] = 0
-				eAccounts["tests"]
+				eAccounts["tests"] = 0.0001
+				Expect(accounts).Should(Equal(eAccounts))
+			})
+		})
+	})
+
+	Describe("Testing ListAddressGroupings", func() {
+		Context("when success", 
