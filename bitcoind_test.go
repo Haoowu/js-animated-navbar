@@ -1514,4 +1514,8 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			list, err := bitcoindClient.List
+			list, err := bitcoindClient.ListAddressGroupings()
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("shoul
