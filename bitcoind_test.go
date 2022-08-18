@@ -1504,4 +1504,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing ListAddressGroupings", func() {
-		Context("when success", 
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":[[["1Pyizp4HK7Bf
