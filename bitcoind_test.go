@@ -1527,4 +1527,10 @@ var _ = Describe("Bitcoind", func() {
 					},
 					{
 						Address: "114fREEjA8XZUypygprUSbrynsUrr4TKjz",
-						Amount:  
+						Amount:  0.0001,
+						Account: "test2",
+					},
+					{
+						Address: "1Bwq28f3eE1Aa3eKsc9ma2o7KX8S6PnHTK",
+						Amount:  0,
+						
