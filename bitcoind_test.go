@@ -1543,4 +1543,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListReceivedByAccount", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":[{"account":"","amount":0.
+				fmt.Fprintln(w, `{"result":[{"account":"","amount":0.00000000,"confirmations":0},{"account":"tests","amount":0.00020000,"confirmations":12}],"error":null,"id":14007474046006
