@@ -1522,3 +1522,9 @@ var _ = Describe("Bitcoind", func() {
 				Expect(list).Should(Equal([]ListAddressResult{
 					{
 						Address: "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy",
+						Amount:  0.0002,
+						Account: "tests",
+					},
+					{
+						Address: "114fREEjA8XZUypygprUSbrynsUrr4TKjz",
+						Amount:  
