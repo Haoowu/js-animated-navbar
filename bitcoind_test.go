@@ -1518,4 +1518,7 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
-			It("shoul
+			It("should return a boolean ", func() {
+				Expect(list).Should(Equal([]ListAddressResult{
+					{
+						Address: "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy",
