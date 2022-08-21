@@ -1533,4 +1533,12 @@ var _ = Describe("Bitcoind", func() {
 					{
 						Address: "1Bwq28f3eE1Aa3eKsc9ma2o7KX8S6PnHTK",
 						Amount:  0,
-						
+						Account: "test2",
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing ListReceivedByAccount", func() {
+		Context("when succes
