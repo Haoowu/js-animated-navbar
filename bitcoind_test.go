@@ -1562,4 +1562,13 @@ var _ = Describe("Bitcoind", func() {
 						Amount:        0,
 						Confirmations: 0,
 					}, {
-						Account:
+						Account:       "tests",
+						Amount:        0.0002,
+						Confirmations: 12,
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing ListRece
