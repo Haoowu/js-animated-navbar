@@ -1571,4 +1571,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("Testing ListRece
+	Describe("Testing ListReceivedByAddress", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	
