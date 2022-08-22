@@ -1553,4 +1553,7 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			txID, err := bitcoindClient.ListReceivedByAccount(1, true)
 			It("should not error", func() {
-				Expec
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return a slice of ReceivedByAccount ", func() {
+				Expect(txID).Should(Equal([]Rec
