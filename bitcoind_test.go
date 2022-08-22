@@ -1556,4 +1556,10 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should return a slice of ReceivedByAccount ", func() {
-				Expect(txID).Should(Equal([]Rec
+				Expect(txID).Should(Equal([]ReceivedByAccount{
+					{
+						Account:       "",
+						Amount:        0,
+						Confirmations: 0,
+					}, {
+						Account:
