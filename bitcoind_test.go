@@ -1574,4 +1574,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListReceivedByAddress", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-	
+				fmt.Fprintln(w, `{"result":[{"address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","account":"tests","amount":0.00020000,"confirmations":13,"txids":["a1b7
