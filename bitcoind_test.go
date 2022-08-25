@@ -1577,4 +1577,9 @@ var _ = Describe("Bitcoind", func() {
 				fmt.Fprintln(w, `{"result":[{"address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","account":"tests","amount":0.00020000,"confirmations":13,"txids":["a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515","eb1c979a968f724f6114c2cce579bd2cac599c154870dae4fdd669319d332346"]},{"address":"1Bvs4PDXKsjPqsfftuXLteDf7bn5PRdyQV","account":"1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3","amount":0.00000000,"confirmations":0,"txids":[]}],"error":null,"id":1400749116266588395}`)
 			})
 			ts, host, port, err := getNewTestServer(handler)
-			
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			txID, err := bitcoindCli
