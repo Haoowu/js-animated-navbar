@@ -1586,4 +1586,7 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
-			It("should return a slice of ReceivedBy
+			It("should return a slice of ReceivedByAddress ", func() {
+				Expect(txID).Should(Equal([]ReceivedByAddress{
+					{
+						Address:       "1Pyizp4HK7
