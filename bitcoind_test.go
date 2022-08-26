@@ -1589,4 +1589,8 @@ var _ = Describe("Bitcoind", func() {
 			It("should return a slice of ReceivedByAddress ", func() {
 				Expect(txID).Should(Equal([]ReceivedByAddress{
 					{
-						Address:       "1Pyizp4HK7
+						Address:       "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy",
+						Account:       "tests",
+						Amount:        0.00020000,
+						Confirmations: 13,
+						TxIds:         []string{"a1b7093d041bc1b763ba1ad
