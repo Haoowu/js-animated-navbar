@@ -1582,4 +1582,8 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			txID, err := bitcoindCli
+			txID, err := bitcoindClient.ListReceivedByAddress(1, true)
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return a slice of ReceivedBy
