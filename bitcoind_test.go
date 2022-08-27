@@ -1593,4 +1593,6 @@ var _ = Describe("Bitcoind", func() {
 						Account:       "tests",
 						Amount:        0.00020000,
 						Confirmations: 13,
-						TxIds:         []string{"a1b7093d041bc1b763ba1ad
+						TxIds:         []string{"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515", "eb1c979a968f724f6114c2cce579bd2cac599c154870dae4fdd669319d332346"},
+					}, {
+						Addre
