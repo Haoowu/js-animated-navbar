@@ -1606,4 +1606,7 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("Testing ListSinceBl
+	Describe("Testing ListSinceBlock", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprin
