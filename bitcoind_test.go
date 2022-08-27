@@ -1597,4 +1597,13 @@ var _ = Describe("Bitcoind", func() {
 					}, {
 						Address:       "1Bvs4PDXKsjPqsfftuXLteDf7bn5PRdyQV",
 						Account:       "1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3",
-						Am
+						Amount:        0,
+						Confirmations: 0,
+						TxIds:         []string{},
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing ListSinceBl
