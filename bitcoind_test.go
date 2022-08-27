@@ -1595,4 +1595,6 @@ var _ = Describe("Bitcoind", func() {
 						Confirmations: 13,
 						TxIds:         []string{"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515", "eb1c979a968f724f6114c2cce579bd2cac599c154870dae4fdd669319d332346"},
 					}, {
-						Addre
+						Address:       "1Bvs4PDXKsjPqsfftuXLteDf7bn5PRdyQV",
+						Account:       "1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3",
+						Am
