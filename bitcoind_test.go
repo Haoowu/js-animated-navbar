@@ -1609,4 +1609,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListSinceBlock", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprin
+				fmt.Fprintln(w, `{"result":{"transactions":[{"account":"test2","address":"1Bwq28f3eE1Aa3eKsc9ma2o7KX8S6PnHTK","category":"receive","amount":0.
