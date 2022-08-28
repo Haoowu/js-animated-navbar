@@ -1609,4 +1609,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListSinceBlock", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":{"transactions":[{"account":"test2","address":"1Bwq28f3eE1Aa3eKsc9ma2o7KX8S6PnHTK","category":"receive","amount":0.
+				fmt.Fprintln(w, `{"result":{"transactions":[{"account":"test2","address":"1Bwq28f3eE1Aa3eKsc9ma2o7KX8S6PnHTK","category":"receive","amount":0.00020000,"confirmations":23,"blockhash":"0000000000000000269eadc1d50b15cd752b37e00b227d2d86e3466acf65c579","blockindex":237,"blocktime":
