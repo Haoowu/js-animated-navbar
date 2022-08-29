@@ -1622,3 +1622,8 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("sould return a slice of Transaction", func() {
+				Expect(transactions).Should(Equal([]Transaction{
+					{
+						Amount:          0.0002,
+						Account:         "test2",
+		
