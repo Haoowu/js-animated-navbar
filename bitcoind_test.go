@@ -1637,4 +1637,9 @@ var _ = Describe("Bitcoind", func() {
 						WalletConflicts: []string{},
 						Time:            1400735561,
 						TimeReceived:    1400735561,
-				
+						Details:         nil,
+						Hex:             "",
+					},
+					{
+						Amount:          0.0001,
+						Account:         "tes
