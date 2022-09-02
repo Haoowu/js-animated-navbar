@@ -1642,4 +1642,8 @@ var _ = Describe("Bitcoind", func() {
 					},
 					{
 						Amount:          0.0001,
-						Account:         "tes
+						Account:         "test2",
+						Address:         "114fREEjA8XZUypygprUSbrynsUrr4TKjz",
+						Category:        "receive",
+						Fee:             0,
+						Confirmatio
