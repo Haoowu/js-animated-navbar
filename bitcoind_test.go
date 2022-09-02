@@ -1649,3 +1649,6 @@ var _ = Describe("Bitcoind", func() {
 						Confirmations:   18,
 						BlockHash:       "000000000000000015b1224f8512331a4407aa44fdd969ac592cea41e7212083",
 						BlockIndex:      57,
+						BlockTime:       1400739914,
+						TxID:            "61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5",
+						Wall
