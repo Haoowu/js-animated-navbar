@@ -1646,4 +1646,6 @@ var _ = Describe("Bitcoind", func() {
 						Address:         "114fREEjA8XZUypygprUSbrynsUrr4TKjz",
 						Category:        "receive",
 						Fee:             0,
-						Confirmatio
+						Confirmations:   18,
+						BlockHash:       "000000000000000015b1224f8512331a4407aa44fdd969ac592cea41e7212083",
+						BlockIndex:      57,
