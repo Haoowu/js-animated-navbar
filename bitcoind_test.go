@@ -1655,4 +1655,13 @@ var _ = Describe("Bitcoind", func() {
 						Time:            1400739890,
 						TimeReceived:    1400739890,
 						Details:         nil,
-					
+						Hex:             "",
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing ListTransactions", func() {
+		Context("when success", func() {
+			h
