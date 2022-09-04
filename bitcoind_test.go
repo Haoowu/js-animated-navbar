@@ -1665,4 +1665,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListTransactions", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":[{"account":"tests","address":"1Pyi
+				fmt.Fprintln(w, `{"result":[{"account":"tests","address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","category":"receive","amount":0.00010000,"confirmations":252,"blockhash":"00000000000000006cff6938c9f
