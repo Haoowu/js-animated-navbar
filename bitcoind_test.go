@@ -1674,4 +1674,8 @@ var _ = Describe("Bitcoind", func() {
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			transactions, err := bitcoindClient.ListTransactions("tests", 10, 0)
-			It("shou
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return a slice of transactions", func() {
+				Expect(transactions).
