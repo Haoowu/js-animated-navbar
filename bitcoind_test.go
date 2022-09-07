@@ -1672,4 +1672,6 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindCl
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			transactions, err := bitcoindClient.ListTransactions("tests", 10, 0)
+			It("shou
