@@ -1686,4 +1686,6 @@ var _ = Describe("Bitcoind", func() {
 						Category:        "receive",
 						Fee:             0,
 						Confirmations:   252,
-						BlockH
+						BlockHash:       "00000000000000006cff6938c9f456630ad39e5636b1e7b9d96bf935cc83d4dd",
+						BlockIndex:      205,
+						BlockTime: 
