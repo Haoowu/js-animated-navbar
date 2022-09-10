@@ -1694,4 +1694,9 @@ var _ = Describe("Bitcoind", func() {
 						Time:            1400652519,
 						TimeReceived:    1400652519,
 						Details:         nil,
-						Hex: 
+						Hex:             "",
+					},
+					{
+						Amount:          0.0001,
+						Account:         "tests",
+						Address:         "1Pyizp4HK7Bfz7Cd
