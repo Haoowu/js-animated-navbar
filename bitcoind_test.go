@@ -1688,4 +1688,6 @@ var _ = Describe("Bitcoind", func() {
 						Confirmations:   252,
 						BlockHash:       "00000000000000006cff6938c9f456630ad39e5636b1e7b9d96bf935cc83d4dd",
 						BlockIndex:      205,
-						BlockTime: 
+						BlockTime:       1400652337,
+						TxID:            "a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515",
+						WalletConf
