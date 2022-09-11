@@ -1719,4 +1719,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing ListUnspent", func() {
-		Context("when success", 
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"re
