@@ -1711,4 +1711,12 @@ var _ = Describe("Bitcoind", func() {
 						Time:            1400740164,
 						TimeReceived:    1400740164,
 						Details:         nil,
-						
+						Hex:             "",
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing ListUnspent", func() {
+		Context("when success", 
