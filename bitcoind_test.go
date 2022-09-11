@@ -1721,4 +1721,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListUnspent", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"re
+				fmt.Fprintln(w, `{"result":[{"txid":"61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5","vout":0,"address":"114fREEjA8XZUypygprUSbrynsUrr4TKjz
