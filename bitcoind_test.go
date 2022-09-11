@@ -1707,4 +1707,8 @@ var _ = Describe("Bitcoind", func() {
 						BlockIndex:      101,
 						BlockTime:       1400740353,
 						TxID:            "eb1c979a968f724f6114c2cce579bd2cac599c154870dae4fdd669319d332346",
-						Wal
+						WalletConflicts: []string{},
+						Time:            1400740164,
+						TimeReceived:    1400740164,
+						Details:         nil,
+						
