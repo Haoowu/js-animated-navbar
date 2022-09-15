@@ -1742,4 +1742,7 @@ var _ = Describe("Bitcoind", func() {
 						Category:        "",
 						Fee:             0,
 						Confirmations:   78,
-			
+						BlockHash:       "",
+						BlockIndex:      0,
+						BlockTime:       0,
+						TxID:            "61195c9a04eb4bb6ef7
