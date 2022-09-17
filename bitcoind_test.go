@@ -1759,4 +1759,7 @@ var _ = Describe("Bitcoind", func() {
 						Category:        "",
 						Fee:             0,
 						Confirmations:   253,
-						
+						BlockHash:       "",
+						BlockIndex:      0,
+						BlockTime:       0,
+						TxID:            "a1b7093d041bc1b763ba1ad894d2bd53
