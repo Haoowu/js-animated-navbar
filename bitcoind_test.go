@@ -1749,4 +1749,10 @@ var _ = Describe("Bitcoind", func() {
 						WalletConflicts: nil,
 						Time:            0,
 						TimeReceived:    0,
-						Details:      
+						Details:         nil,
+						Hex:             "",
+					},
+					{
+						Amount:          0.0001,
+						Account:         "tests",
+						Addre
