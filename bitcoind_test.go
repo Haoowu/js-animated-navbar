@@ -1766,4 +1766,13 @@ var _ = Describe("Bitcoind", func() {
 						WalletConflicts: nil,
 						Time:            0,
 						TimeReceived:    0,
-						Details:         ni
+						Details:         nil,
+						Hex:             "",
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing LockUnspent", func() {
+		Context("when succe
