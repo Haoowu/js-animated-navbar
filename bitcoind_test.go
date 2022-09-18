@@ -1777,4 +1777,8 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing LockUnspent", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"resu
+				fmt.Fprintln(w, `{"result":true,"error":null,"id":1400781494667270486}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
