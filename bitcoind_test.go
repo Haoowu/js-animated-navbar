@@ -1785,4 +1785,8 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			success, err := bitcoindClient.LockUnspent(false, []UnspendableOutput{{"61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5", 0}, {"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369
+			success, err := bitcoindClient.LockUnspent(false, []UnspendableOutput{{"61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5", 0}, {"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515", 0}})
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return a boolean true ",
