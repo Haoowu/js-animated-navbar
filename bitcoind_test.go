@@ -1813,4 +1813,8 @@ var _ = Describe("Bitcoind", func() {
 			It("should return a slice of UnspendableOutput", func() {
 				Expect(success).Should(Equal([]UnspendableOutput{
 					{
-						TxId: "61195c9a04eb4bb6ef7c1
+						TxId: "61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5",
+						Vout: 1,
+					},
+					{
+						TxId: "a1b7093d041bc1b763ba1ad894d2bd5376b38e
