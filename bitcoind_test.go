@@ -1798,4 +1798,7 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ListLockUnspent", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":[{"txid":"61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5","vout":1},{"txid":"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c736961368
+				fmt.Fprintln(w, `{"result":[{"txid":"61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5","vout":1},{"txid":"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515","vout":1}],"error":null,"id":1400781494716917978}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			
