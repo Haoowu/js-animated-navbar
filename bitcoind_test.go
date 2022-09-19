@@ -1796,4 +1796,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing ListLockUnspent", func() {
-		Context("when succes
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":[{"txid":"6
