@@ -1826,4 +1826,6 @@ var _ = Describe("Bitcoind", func() {
 	})
 
 	Describe("Testing Move", func() {
-		Context("when success",
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":true,"error"
