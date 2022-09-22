@@ -1817,4 +1817,13 @@ var _ = Describe("Bitcoind", func() {
 						Vout: 1,
 					},
 					{
-						TxId: "a1b7093d041bc1b763ba1ad894d2bd5376b38e
+						TxId: "a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515",
+						Vout: 1,
+					},
+				}))
+			})
+		})
+	})
+
+	Describe("Testing Move", func() {
+		Context("when success",
