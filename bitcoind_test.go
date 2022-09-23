@@ -1836,4 +1836,7 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			success, err := bitcoindClient.Move(
+			success, err := bitcoindClient.Move("tests1", "test2", 0.0001, 1, "Move test")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
