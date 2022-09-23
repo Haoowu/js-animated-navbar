@@ -1828,4 +1828,8 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing Move", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":true,"error"
+				fmt.Fprintln(w, `{"result":true,"error":null,"id":1400824961400921439}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log
