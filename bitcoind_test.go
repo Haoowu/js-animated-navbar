@@ -1856,4 +1856,5 @@ var _ = Describe("Bitcoind", func() {
 				log.Fatalln(err)
 			}
 			defer ts.Close()
-			bitcoindClient, _ := New(host, port, 
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			txID, err := bitcoindClient.SendFrom("fakeAccount", "1HgpsmxV52eAjDcoNpVGpYEhGfgN7mM1JB", 0.0001, 1, "Comm
