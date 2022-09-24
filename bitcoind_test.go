@@ -1840,3 +1840,10 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
+			It("should return a boolean true ", func() {
+				Expect(success).Should(BeTrue())
+			})
+		})
+	})
+
+	Describe("Testing SendF
