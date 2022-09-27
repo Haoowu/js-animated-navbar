@@ -1876,4 +1876,7 @@ var _ = Describe("Bitcoind", func() {
 			if err != nil {
 				log.Fatalln(err)
 			}
-			
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			amounts := make(map[string]float64)
+			amounts["1HgpsmxV52eAjDcoNpVGpYEhGfg
