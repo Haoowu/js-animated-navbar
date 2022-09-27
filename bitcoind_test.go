@@ -1870,4 +1870,10 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing SendMany", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":"ddb9d58a175de0173d6f2d16c5159f3bc747baf3c1af5926d916b185da5b6882","er
+				fmt.Fprintln(w, `{"result":"ddb9d58a175de0173d6f2d16c5159f3bc747baf3c1af5926d916b185da5b6882","error":null,"id":1400852951961136429}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			
