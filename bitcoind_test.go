@@ -1867,4 +1867,6 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("
+	Describe("Testing SendMany", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter,
