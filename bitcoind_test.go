@@ -1893,4 +1893,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing SendToAddress", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.Resp
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":"72cb80e576096d4ea36d7a11df9844c4e416dc45a3701f0592ab1a015780923b","err
