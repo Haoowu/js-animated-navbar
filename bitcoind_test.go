@@ -1885,4 +1885,7 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
-			It("should return 
+			It("should return a transaction ID ", func() {
+				Expect(txID).Should(Equal("ddb9d58a175de0173d6f2d16c5159f3bc747baf3c1af5926d916b185da5b6882"))
+			})
+		})
