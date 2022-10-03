@@ -1904,4 +1904,5 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			amounts := make(map[string]float64)
 			amounts["1HgpsmxV52eAjDcoNpVGpYEhGfgN7mM1JB"] = 0.0001
-			amounts["1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj"] = 0.000
+			amounts["1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj"] = 0.0001
+			txID, err := bitcoindClient.SendToAddress("1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj", 0.0001, "send to address test", "send 
