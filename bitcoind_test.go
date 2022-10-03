@@ -1913,3 +1913,8 @@ var _ = Describe("Bitcoind", func() {
 				Expect(txID).Should(Equal("72cb80e576096d4ea36d7a11df9844c4e416dc45a3701f0592ab1a015780923b"))
 			})
 		})
+	})
+
+	Describe("Testing SetAccount", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Re
