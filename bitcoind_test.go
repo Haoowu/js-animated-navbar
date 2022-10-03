@@ -1905,4 +1905,8 @@ var _ = Describe("Bitcoind", func() {
 			amounts := make(map[string]float64)
 			amounts["1HgpsmxV52eAjDcoNpVGpYEhGfgN7mM1JB"] = 0.0001
 			amounts["1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj"] = 0.0001
-			txID, err := bitcoindClient.SendToAddress("1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj", 0.0001, "send to address test", "send 
+			txID, err := bitcoindClient.SendToAddress("1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj", 0.0001, "send to address test", "send to cx")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return a transaction
