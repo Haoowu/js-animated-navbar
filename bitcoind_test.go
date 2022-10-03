@@ -1917,4 +1917,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing SetAccount", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Re
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1401084723056044141}`)
+			})
+			ts, host, port, err := getNewTestSer
