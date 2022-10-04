@@ -1954,4 +1954,7 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing SetTxFee", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fm
+				fmt.Fprintln(w, `{"result":true,"error":null,"id":1401115696421261167}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err
