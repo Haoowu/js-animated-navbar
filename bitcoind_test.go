@@ -1976,4 +1976,8 @@ var _ = Describe("Bitcoind", func() {
 			})
 			ts, host, port, err := getNewTestServer(handler)
 			if err != nil {
-				log.Fatalln(
+				log.Fatalln(err)
+			}
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			sig, err := bitcoindClient.SignMes
