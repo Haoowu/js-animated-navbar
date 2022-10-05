@@ -1985,4 +1985,11 @@ var _ = Describe("Bitcoind", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
 			It("should return a string sig ", func() {
-				Expect(sig).Should(Equal("ILImxcrK6iELcUSqH9ntxGYrpd9MuYwx0rXnLHron1NEG9Jog36RbFCQzaRSO0/XXu6msoWiz4n1Q64kCN
+				Expect(sig).Should(Equal("ILImxcrK6iELcUSqH9ntxGYrpd9MuYwx0rXnLHron1NEG9Jog36RbFCQzaRSO0/XXu6msoWiz4n1Q64kCNv4nH8="))
+			})
+		})
+	})
+
+	Describe("Testing Stop", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w h
