@@ -1969,4 +1969,6 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("Testing SignMessage
+	Describe("Testing SignMessage", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
