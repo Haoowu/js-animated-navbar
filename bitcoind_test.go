@@ -1972,4 +1972,8 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing SignMessage", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":"ILImxcrK6iELcUSqH9ntxGYrpd9MuYwx0rXnLHron1NEG9Jog36RbFCQzaRSO0/XXu6msoWiz4n1Q64kCNv4nH8=","error":nu
+				fmt.Fprintln(w, `{"result":"ILImxcrK6iELcUSqH9ntxGYrpd9MuYwx0rXnLHron1NEG9Jog36RbFCQzaRSO0/XXu6msoWiz4n1Q64kCNv4nH8=","error":null,"id":1401117539316610969}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(
