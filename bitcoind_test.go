@@ -1980,4 +1980,8 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			sig, err := bitcoindClient.SignMes
+			sig, err := bitcoindClient.SignMessage("1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy", "test message")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("sho
