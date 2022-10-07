@@ -2019,4 +2019,8 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			resp, err := bitcoindClient.ValidateAddre
+			resp, err := bitcoindClient.ValidateAddress("1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred())
+			})
+			It("should return a s
