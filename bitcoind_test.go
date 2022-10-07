@@ -2003,4 +2003,11 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			err = bitcoindClient.Stop()
 			It("should not error", func() {
-				Expect(err).NotTo(Have
+				Expect(err).NotTo(HaveOccurred())
+			})
+		})
+	})
+
+	Describe("Testing ValidateAddress", func() {
+		Context("when success", func() {
+			handler := http.HandlerFu
