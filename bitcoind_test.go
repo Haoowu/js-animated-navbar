@@ -2011,4 +2011,4 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing ValidateAddress", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":{"isvalid":true,"address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","ismin
+				fmt.Fprintln(w, `{"result":{"isvalid":true,"address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","ismine":true,"isscript":false,"pubkey":"02dc7ecd8baec59cf018bf40d1e948519dc0dcf256eb3bc3ed121bc3ee83c98b01","iscompressed":true,"account":"tests"}
