@@ -2010,4 +2010,5 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing ValidateAddress", func() {
 		Context("when success", func() {
-			handler := http.HandlerFu
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":{"isvalid":true,"address":"1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy","ismin
