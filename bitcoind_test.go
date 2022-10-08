@@ -2026,4 +2026,7 @@ var _ = Describe("Bitcoind", func() {
 			It("should return a string sig ", func() {
 				Expect(resp).Should(Equal(ValidateAddressResponse{
 					IsValid:      true,
-					
+					Address:      "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy",
+					IsMine:       true,
+					IsScript:     false,
+					PubKey:       "02d
