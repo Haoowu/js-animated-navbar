@@ -2029,4 +2029,7 @@ var _ = Describe("Bitcoind", func() {
 					Address:      "1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy",
 					IsMine:       true,
 					IsScript:     false,
-					PubKey:       "02d
+					PubKey:       "02dc7ecd8baec59cf018bf40d1e948519dc0dcf256eb3bc3ed121bc3ee83c98b01",
+					IsCompressed: true,
+					Account:      "tests",
+		
