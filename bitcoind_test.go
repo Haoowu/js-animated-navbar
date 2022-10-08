@@ -2023,4 +2023,7 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
-			It("should return a s
+			It("should return a string sig ", func() {
+				Expect(resp).Should(Equal(ValidateAddressResponse{
+					IsValid:      true,
+					
