@@ -2058,4 +2058,6 @@ var _ = Describe("Bitcoind", func() {
 		})
 	})
 
-	Describe("Testing WalletLock", f
+	Describe("Testing WalletLock", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) 
