@@ -2032,4 +2032,11 @@ var _ = Describe("Bitcoind", func() {
 					PubKey:       "02dc7ecd8baec59cf018bf40d1e948519dc0dcf256eb3bc3ed121bc3ee83c98b01",
 					IsCompressed: true,
 					Account:      "tests",
-		
+				}))
+			})
+		})
+	})
+
+	Describe("Testing VerifyMessage", func() {
+		Context("when success", func() {
+			handler := http.HandlerFunc(func(
