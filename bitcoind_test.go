@@ -2060,4 +2060,7 @@ var _ = Describe("Bitcoind", func() {
 
 	Describe("Testing WalletLock", func() {
 		Context("when success", func() {
-			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) 
+			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1401119933934255494}`)
+			})
+			ts, host, port, 
