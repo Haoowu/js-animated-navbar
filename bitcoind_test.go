@@ -2040,4 +2040,10 @@ var _ = Describe("Bitcoind", func() {
 	Describe("Testing VerifyMessage", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":true,"error":null,"id":1401117539369759914}
+				fmt.Fprintln(w, `{"result":true,"error":null,"id":1401117539369759914}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			def
