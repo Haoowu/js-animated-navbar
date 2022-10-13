@@ -2052,4 +2052,10 @@ var _ = Describe("Bitcoind", func() {
 			It("should not error", func() {
 				Expect(err).NotTo(HaveOccurred())
 			})
-			It("suc
+			It("succes should be true", func() {
+				Expect(success).To(BeTrue())
+			})
+		})
+	})
+
+	Describe("Testing WalletLock", f
