@@ -2046,4 +2046,6 @@ var _ = Describe("Bitcoind", func() {
 			if err != nil {
 				log.Fatalln(err)
 			}
-			def
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			success, err := bitcoindClient.VerifyMessage("1Pyizp4HK7
