@@ -2071,4 +2071,11 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			err = bitcoindClient.WalletLock()
 			It("should not error", func() {
-				Expect(err).N
+				Expect(err).NotTo(HaveOccurred())
+			})
+		})
+	})
+
+	Describe("walletpassphrase", func() {
+		Context("when success", func() {
+	
