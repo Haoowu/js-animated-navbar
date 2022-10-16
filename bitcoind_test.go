@@ -2085,4 +2085,7 @@ var _ = Describe("Bitcoind", func() {
 			if err != nil {
 				log.Fatalln(err)
 			}
-			defer 
+			defer ts.Close()
+			bitcoindClient, _ := New(host, port, "x", "fake", false)
+			err = bitcoindClient.WalletPassphrase("fakePassPhrase", 60)
+			It("should n
