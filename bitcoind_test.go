@@ -2079,4 +2079,10 @@ var _ = Describe("Bitcoind", func() {
 	Describe("walletpassphrase", func() {
 		Context("when success", func() {
 			handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				fmt.Fprintln(w, `{"result":null,"error":null,"i
+				fmt.Fprintln(w, `{"result":null,"error":null,"id":1400433627531460562}`)
+			})
+			ts, host, port, err := getNewTestServer(handler)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			defer 
