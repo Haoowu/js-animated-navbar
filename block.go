@@ -12,4 +12,12 @@ type Block struct {
 	Size uint64 `json:"size"`
 
 	// The block height or index
-	Height uint64 `jso
+	Height uint64 `json:"height"`
+
+	// The block version
+	Version uint32 `json:"version"`
+
+	// The merkle root
+	Merkleroot string `json:"merkleroot"`
+
+	// Slice on 
