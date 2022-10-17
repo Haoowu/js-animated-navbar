@@ -2105,4 +2105,6 @@ var _ = Describe("Bitcoind", func() {
 			}
 			defer ts.Close()
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
-			err = bitcoindClient.WalletPassphrase
+			err = bitcoindClient.WalletPassphraseChange("fakePassPhrase", "fake passphrase")
+			It("should not error", func() {
+				Expect(err).NotTo(HaveOccurred()
