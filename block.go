@@ -20,4 +20,10 @@ type Block struct {
 	// The merkle root
 	Merkleroot string `json:"merkleroot"`
 
-	// Slice on 
+	// Slice on transaction ids
+	Tx []string `json:"tx"`
+
+	// The block time in seconds since epoch (Jan 1 1970 GMT)
+	Time int64 `json:"time"`
+
+	// T
