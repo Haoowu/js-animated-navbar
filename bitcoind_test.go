@@ -2107,4 +2107,10 @@ var _ = Describe("Bitcoind", func() {
 			bitcoindClient, _ := New(host, port, "x", "fake", false)
 			err = bitcoindClient.WalletPassphraseChange("fakePassPhrase", "fake passphrase")
 			It("should not error", func() {
-				Expect(err).NotTo(HaveOccurred()
+				Expect(err).NotTo(HaveOccurred())
+			})
+		})
+	})
+
+	// {"result":null,"error":null,"id":1401120599336429525}
+})
