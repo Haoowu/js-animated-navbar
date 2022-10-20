@@ -38,4 +38,8 @@ type Block struct {
 	// Total amount of work in active chain, in hexadecimal
 	Chainwork string `json:"chainwork,omitempty"`
 
-	/
+	// The hash of the previous block
+	Previousblockhash string `json:"previousblockhash"`
+
+	// The hash of the next block
+	Nextblockh
