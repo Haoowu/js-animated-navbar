@@ -35,4 +35,7 @@ type Block struct {
 	// The difficulty
 	Difficulty float64 `json:"difficulty"`
 
+	// Total amount of work in active chain, in hexadecimal
+	Chainwork string `json:"chainwork,omitempty"`
+
 	/
