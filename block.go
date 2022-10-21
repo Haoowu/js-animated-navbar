@@ -42,4 +42,5 @@ type Block struct {
 	Previousblockhash string `json:"previousblockhash"`
 
 	// The hash of the next block
-	Nextblockh
+	Nextblockhash string `json:"nextblockhash"`
+}
