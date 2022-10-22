@@ -244,3 +244,111 @@ func main() {
 	// ListSinceBlock
 	/*
 		 transactions, err := bc.ListSinceBlock("00000000000000003f8d1861d035e44d4297c49bd2517dc0a44ad73c7091926c", 1)
+		log.Println(err, transactions)
+	*/
+
+	// ListTransactions
+	/*
+		transactions, err := bc.ListTransactions("tests", 10, 0)
+		log.Println(err, transactions)
+	*/
+
+	// ListUnspent
+	/*
+		transactions, err := bc.ListUnspent(1, 9999)
+		log.Println(err, transactions)
+	*/
+
+	// LockUnspent
+	/*
+		success, err := bc.LockUnspent(false, []bitcoind.UnspendableOutput{{"61195c9a04eb4bb6ef7c1d360e472b1620c4befed611ddcab46a6b2711344cd5", 0}, {"a1b7093d041bc1b763ba1ad894d2bd5376b38e6c7369613684e7140e8d9f7515", 0}})
+		log.Println(err, success)
+	*/
+
+	// ListLockUnspent
+	/*
+		unspentLocked, err := bc.ListLockUnspent()
+		log.Println(err, unspentLocked)
+	*/
+
+	// Move
+	/*
+		success, err := bc.Move("tests1", "test2", 0.0001, 1, "Move test")
+		log.Println(err, success)
+	*/
+
+	// senfrom
+	/*
+		txID, err := bc.SendFrom("test2", "1HgpsmxV52eAjDcoNpVGpYEhGfgN7mM1JB", 0.0001, 1, "Comment: Envoit depuis test2", "commentTo: envoit depuis test2")
+		log.Println(err, txID)
+	*/
+
+	// sendmany
+	/*
+		amounts := make(map[string]float64)
+		amounts["1HgpsmxV52eAjDcoNpVGpYEhGfgN7mM1JB"] = 0.0001
+		amounts["1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj"] = 0.0001
+		txID, err := bc.SendMany("tests", amounts, 1, "test sendMany")
+		log.Println(err, txID)
+	*/
+
+	// sendtoaddress
+	/*
+		txID, err := bc.SendToAddress("1Ldfez73eanxUZhudrS62BXqk8BrLxYQFj", 0.0001, "send to address test", "send to cx")
+		log.Println(err, txID)
+	*/
+
+	// setaccount
+	/*
+		err = bc.SetAccount("1KU5DX7jKECLxh1nYhmQ7CahY7GMNMVLP3", "tests")
+		log.Println(err)
+	*/
+
+	// setgenerate
+	/*
+		err = bc.SetGenerate(false, 1)
+		log.Println(err)
+	*/
+
+	// settxfee
+	/*
+		err = bc.SetTxFee(0.00001)
+		log.Println(err)
+	*/
+
+	// SignMessage
+	/*
+		sig, err := bc.SignMessage("1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy", "test message")
+		log.Println(err, sig)
+	*/
+
+	// stop
+	/*
+		err = bc.Stop()
+		log.Println(err)
+	*/
+
+	// ValidateAddress
+	/*
+		va, err := bc.ValidateAddress("1HgpsmxV52eAjDcoNpVGpYEhGfgN7mM1JB")
+		log.Println(err, va)
+	*/
+
+	// verifymessage
+	/*
+		err = bc.VerifyMessage("1Pyizp4HK7Bfz7CdbSwHHtprk7Ghumhxmy", "IDIM8ITWfjyf/e9jaY3+P1ErTDRVdpD3YKmTlVlhuBhwZ/qgnLf+M0GTSXgFWCv4dL3rV+x5ymZJagqy19iRFg4=", "test message")
+		log.Println(err)
+	*/
+
+	// walletlock
+	/*
+		err = bc.WalletLock()
+		log.Println(err)
+	*/
+
+	// WalletPassphraseChange
+	/*
+		err = bc.WalletPassphraseChange(WALLET_PASSPHRASE2, WALLET_PASSPHRASE)
+		log.Println(err)
+	*/
+}
