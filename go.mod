@@ -10,4 +10,6 @@ require (
 
 require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/nxadm/tail v1.4.8 // indire
+	github.com/nxadm/tail v1.4.8 // indirect
+	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e
