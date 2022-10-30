@@ -32,4 +32,5 @@ github.com/onsi/gomega v1.19.0/go.mod h1:LY+I3pBVzYsTBU1AnDwOSxaYi9WoWiqgwooUqq9
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
-github.com/toorop/go-bitcoind v0.0.0-2020102508155
+github.com/toorop/go-bitcoind v0.0.0-20201025081558-87ada228a807 h1:+EH7z9AvJbrMACe89VqROP2SBZ5Am7D0ZB+z6JMD2s0=
+github.com/toorop/go-bitcoind v0.0.0-20201025081558-87a
