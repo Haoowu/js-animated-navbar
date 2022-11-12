@@ -29,4 +29,11 @@ var _ = Describe("Helpers", func() {
 				Err:    nil,
 			}
 			It("should occur", func() {
-				err := hand
+				err := handleError(errPrev, &response)
+				Expect(Ω(err).Should(HaveOccurred()))
+			})
+
+		})
+
+		// RPC error is not null
+		Context("RPC error",
