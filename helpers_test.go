@@ -23,4 +23,10 @@ var _ = Describe("Helpers", func() {
 		// err
 		Context("errPrev is not nil", func() {
 			errPrev := errors.New("fake error")
-			res
+			response := rpcResponse{
+				Id:     1212,
+				Result: []byte("{}"),
+				Err:    nil,
+			}
+			It("should occur", func() {
+				err := hand
