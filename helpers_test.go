@@ -16,4 +16,11 @@ var _ = Describe("Helpers", func() {
 				Err:    nil,
 			}
 			It("should return nil", func() {
-				Expect(handleError(n
+				Expect(handleError(nil, &response)).To(BeNil())
+			})
+		})
+
+		// err
+		Context("errPrev is not nil", func() {
+			errPrev := errors.New("fake error")
+			res
