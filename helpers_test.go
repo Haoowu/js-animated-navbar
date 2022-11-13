@@ -43,4 +43,9 @@ var _ = Describe("Helpers", func() {
 			}
 			response := rpcResponse{
 				Id:     1212,
-				Re
+				Result: []byte("{}"),
+				Err:    rpcError,
+			}
+			It("should occur", func() {
+				err := handleError(nil, &response)
+				Expect(Ω
