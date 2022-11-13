@@ -48,4 +48,10 @@ var _ = Describe("Helpers", func() {
 			}
 			It("should occur", func() {
 				err := handleError(nil, &response)
-				Expect(Ω
+				Expect(Ω(err).Should(HaveOccurred()))
+			})
+
+		})
+
+	})
+})
