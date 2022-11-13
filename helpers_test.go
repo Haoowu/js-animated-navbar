@@ -36,4 +36,11 @@ var _ = Describe("Helpers", func() {
 		})
 
 		// RPC error is not null
-		Context("RPC error",
+		Context("RPC error", func() {
+			rpcError := &RPCError{
+				Code:    6,
+				Message: "Fake error",
+			}
+			response := rpcResponse{
+				Id:     1212,
+				Re
