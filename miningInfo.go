@@ -9,4 +9,10 @@ type MiningInfo struct {
 	CurrentBlocksize uint64 `json:"currentblocksize"`
 
 	// The last block transaction
-	CurrentBlockTx uint64 `json:"current
+	CurrentBlockTx uint64 `json:"currentblocktx"`
+
+	// The current difficulty
+	Difficulty float64 `json:"difficulty"`
+
+	// Current errors
+	Errors string `json:"error
