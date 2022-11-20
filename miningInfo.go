@@ -18,4 +18,9 @@ type MiningInfo struct {
 	Errors string `json:"errors"`
 
 	// The processor limit for generation. -1 if no generation. (see getgenerate or setgenerate calls)
-	GenProcLimit in
+	GenProcLimit int32 `json:"genproclimit"`
+
+	// The size of the mem pool
+	PooledtTx uint64 `json:"pooledtx"`
+
+	// If using testnet or not
