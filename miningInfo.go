@@ -24,3 +24,7 @@ type MiningInfo struct {
 	PooledtTx uint64 `json:"pooledtx"`
 
 	// If using testnet or not
+	Testnet bool `json:"testnet"`
+
+	// If the generation is on or off (see getgenerate or setgenerate calls)
+	Generate bool `json:"generate"`
