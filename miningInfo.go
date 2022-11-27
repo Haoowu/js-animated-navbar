@@ -28,3 +28,10 @@ type MiningInfo struct {
 
 	// If the generation is on or off (see getgenerate or setgenerate calls)
 	Generate bool `json:"generate"`
+
+	// The network hashrate
+	NetworkHashps uint64 `json:"networkhashps"`
+
+	// Node hashrate
+	HashesPersec uint64 `json:"hashespersec"`
+}
