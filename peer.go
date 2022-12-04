@@ -14,4 +14,12 @@ type Peer struct {
 	Lastsend uint64 `json:"lastsend"`
 
 	// The time in seconds since epoch (Jan 1 1970 GMT) of the last receive
-	Lastrecv uint64
+	Lastrecv uint64 `json:"lastrecv"`
+
+	// The total bytes sent
+	Bytessent uint64 `json:"bytessent"`
+
+	// The total bytes received
+	Bytesrecv uint64 `json:"bytesrecv"`
+
+	// The 
