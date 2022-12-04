@@ -26,4 +26,13 @@ type Peer struct {
 	Conntime uint64 `json:"conntime"`
 
 	// Ping time
-	Pingtime float64 `json:"ping
+	Pingtime float64 `json:"pingtime"`
+
+	// Ping Wait
+	Pingwait float64 `json:"pingwait"`
+
+	// The peer version, such as 7001
+	Version uint32 `json:"version"`
+
+	// The string version
+	
