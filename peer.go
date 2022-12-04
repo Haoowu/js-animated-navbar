@@ -10,4 +10,8 @@ type Peer struct {
 	// The services
 	Services string `json:"services"`
 
-	// The time in seconds since epoch (Jan 1 1970 GMT) of the 
+	// The time in seconds since epoch (Jan 1 1970 GMT) of the last send
+	Lastsend uint64 `json:"lastsend"`
+
+	// The time in seconds since epoch (Jan 1 1970 GMT) of the last receive
+	Lastrecv uint64
