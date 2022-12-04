@@ -22,4 +22,8 @@ type Peer struct {
 	// The total bytes received
 	Bytesrecv uint64 `json:"bytesrecv"`
 
-	// The 
+	// The connection time in seconds since epoch (Jan 1 1970 GMT)
+	Conntime uint64 `json:"conntime"`
+
+	// Ping time
+	Pingtime float64 `json:"ping
