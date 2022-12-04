@@ -35,4 +35,7 @@ type Peer struct {
 	Version uint32 `json:"version"`
 
 	// The string version
-	
+	Subver string `json:"subver"`
+
+	// Inbound (true) or Outbound (false)
+	Inbound bool `json:"inboun
