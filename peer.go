@@ -43,4 +43,9 @@ type Peer struct {
 	//  The starting height (block) of the peer
 	Startingheight int32 `json:"startingheight"`
 
-	// The ban score (stats.nMisbehavi
+	// The ban score (stats.nMisbehavior)
+	Banscore int32 `json:"banscore"`
+
+	// If sync node
+	Syncnode bool `json:"syncnode"`
+}
