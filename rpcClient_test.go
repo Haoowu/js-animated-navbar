@@ -26,4 +26,9 @@ var _ = Describe("RpcClient", func() {
 
 		Context("when initialisation failed (empty host)", func() {
 			client, err := New("", 8334, "user", "paswd", false)
-			It("err should occu
+			It("err should occured", func() {
+				Expect(err).Should(HaveOccurred())
+			})
+			It("rpcClient should be nil", func() {
+				Expect(client).To(BeNil())
+	
