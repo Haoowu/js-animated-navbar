@@ -22,3 +22,8 @@ var _ = Describe("RpcClient", func() {
 			It("return must be a new rpcClient address ", func() {
 				Expect(client).Should(BeAssignableToTypeOf(&rpcClient{}))
 			})
+		})
+
+		Context("when initialisation failed (empty host)", func() {
+			client, err := New("", 8334, "user", "paswd", false)
+			It("err should occu
