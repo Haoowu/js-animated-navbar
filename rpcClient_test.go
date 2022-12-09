@@ -12,4 +12,6 @@ import (
 	"time"
 )
 
-var 
+var _ = Describe("RpcClient", func() {
+	Describe("Initialise a new rpcClient", func() {
+		Context("when initialisation succeeded", func() {
