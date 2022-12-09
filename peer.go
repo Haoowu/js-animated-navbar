@@ -38,4 +38,9 @@ type Peer struct {
 	Subver string `json:"subver"`
 
 	// Inbound (true) or Outbound (false)
-	Inbound bool `json:"inboun
+	Inbound bool `json:"inbound"`
+
+	//  The starting height (block) of the peer
+	Startingheight int32 `json:"startingheight"`
+
+	// The ban score (stats.nMisbehavi
