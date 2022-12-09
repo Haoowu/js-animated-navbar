@@ -17,4 +17,8 @@ var _ = Describe("RpcClient", func() {
 		Context("when initialisation succeeded", func() {
 			client, err := newClient("127.0.0.1", 8334, "user", "paswd", false, 30)
 			It("err should be nil", func() {
-				Expect(err).To(
+				Expect(err).To(BeNil())
+			})
+			It("return must be a new rpcClient address ", func() {
+				Expect(client).Should(BeAssignableToTypeOf(&rpcClient{}))
+			})
