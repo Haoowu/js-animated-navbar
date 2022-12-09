@@ -1,0 +1,4 @@
+package bitcoind
+
+import (
+	"fmt"
