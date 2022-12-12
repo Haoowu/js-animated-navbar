@@ -40,4 +40,8 @@ var _ = Describe("RpcClient", func() {
 			client, err := newClient("127.0.0.1", 123, "fake", "fake", false, 30)
 			_, err = client.call("getdifficulty", nil)
 			It("err should occured", func() {
-				Expect(err).Sh
+				Expect(err).Should(MatchError("Post http://127.0.0.1:123: dial tcp 127.0.0.1:123: connection refused"))
+			})
+		})
+
+		Context("When timeout occ
