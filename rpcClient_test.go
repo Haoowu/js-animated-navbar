@@ -52,4 +52,6 @@ var _ = Describe("RpcClient", func() {
 			defer ts.Close()
 			p := strings.Split(ts.URL, ":")
 			host := p[1][2:]
-		
+			port, err := strconv.ParseInt(p[2], 10, 64)
+			client, err := newClient(host, int(port), "fake", "fake", false, 30)
+			_, err = client.call(
