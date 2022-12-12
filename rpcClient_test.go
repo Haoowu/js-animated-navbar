@@ -31,4 +31,10 @@ var _ = Describe("RpcClient", func() {
 			})
 			It("rpcClient should be nil", func() {
 				Expect(client).To(BeNil())
-	
+			})
+		})
+	})
+
+	Describe("Do requests", func() {
+		Context("When connexion fail", func() {
+			client, err := newClient("127.0.0.1", 123, "fake", "f
