@@ -44,4 +44,6 @@ var _ = Describe("RpcClient", func() {
 			})
 		})
 
-		Context("When timeout occ
+		Context("When timeout occured", func() {
+			ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				time.Sleep((RPCCLIENT_TIMEOUT + 2)
