@@ -37,4 +37,7 @@ var _ = Describe("RpcClient", func() {
 
 	Describe("Do requests", func() {
 		Context("When connexion fail", func() {
-			client, err := newClient("127.0.0.1", 123, "fake", "f
+			client, err := newClient("127.0.0.1", 123, "fake", "fake", false, 30)
+			_, err = client.call("getdifficulty", nil)
+			It("err should occured", func() {
+				Expect(err).Sh
