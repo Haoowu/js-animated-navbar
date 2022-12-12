@@ -46,4 +46,10 @@ var _ = Describe("RpcClient", func() {
 
 		Context("When timeout occured", func() {
 			ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				time.Sleep((RPCCLIENT_TIMEOUT + 2)
+				time.Sleep((RPCCLIENT_TIMEOUT + 2) * time.Second)
+				fmt.Fprintln(w, "Hello, client")
+			}))
+			defer ts.Close()
+			p := strings.Split(ts.URL, ":")
+			host := p[1][2:]
+		
