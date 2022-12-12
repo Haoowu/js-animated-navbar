@@ -54,4 +54,7 @@ var _ = Describe("RpcClient", func() {
 			host := p[1][2:]
 			port, err := strconv.ParseInt(p[2], 10, 64)
 			client, err := newClient(host, int(port), "fake", "fake", false, 30)
-			_, err = client.call(
+			_, err = client.call("getdifficulty", nil)
+
+			It("timeout err should occured", func() {
+				Expect(err).Should(MatchError("Timeout reading d
