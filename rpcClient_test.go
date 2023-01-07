@@ -57,4 +57,11 @@ var _ = Describe("RpcClient", func() {
 			_, err = client.call("getdifficulty", nil)
 
 			It("timeout err should occured", func() {
-				Expect(err).Should(MatchError("Timeout reading d
+				Expect(err).Should(MatchError("Timeout reading data from server"))
+			})
+
+		})
+
+	})
+
+})
