@@ -17,4 +17,7 @@ type Vin struct {
 
 type ScriptPubKey struct {
 	Asm       string   `json:"asm"`
-	Hex       string   `
+	Hex       string   `json:"hex"`
+	ReqSigs   int      `json:"reqSigs,omitempty"`
+	Type      string   `json:"type"`
+	Address   string   `jso
