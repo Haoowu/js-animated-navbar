@@ -11,4 +11,10 @@ type Vin struct {
 	Coinbase  string    `json:"coinbase"`
 	Txid      string    `json:"txid"`
 	Vout      int       `json:"vout"`
-	ScriptSig ScriptSig `json:"sc
+	ScriptSig ScriptSig `json:"scriptSig"`
+	Sequence  uint32    `json:"sequence"`
+}
+
+type ScriptPubKey struct {
+	Asm       string   `json:"asm"`
+	Hex       string   `
