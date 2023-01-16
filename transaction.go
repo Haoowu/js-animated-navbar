@@ -8,4 +8,7 @@ type ScriptSig struct {
 
 // Vin represent an IN value
 type Vin struct {
-	Coinb
+	Coinbase  string    `json:"coinbase"`
+	Txid      string    `json:"txid"`
+	Vout      int       `json:"vout"`
+	ScriptSig ScriptSig `json:"sc
