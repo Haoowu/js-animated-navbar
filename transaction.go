@@ -20,4 +20,10 @@ type ScriptPubKey struct {
 	Hex       string   `json:"hex"`
 	ReqSigs   int      `json:"reqSigs,omitempty"`
 	Type      string   `json:"type"`
-	Address   string   `jso
+	Address   string   `json:"address,omitempty"`
+	Addresses []string `json:"addresses,omitempty"`
+}
+
+// Vout represent an OUT value
+type Vout struct {
+	Value  
