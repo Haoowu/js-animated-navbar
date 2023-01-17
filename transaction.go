@@ -31,4 +31,8 @@ type Vout struct {
 	ScriptPubKey ScriptPubKey `json:"scriptPubKey"`
 }
 
-// RawTx repres
+// RawTx represents a raw transaction
+type RawTransaction struct {
+	Hex           string `json:"hex"`
+	Txid          string `json:"txid"`
+	Version       uint32 `json:
