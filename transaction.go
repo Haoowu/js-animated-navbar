@@ -26,4 +26,9 @@ type ScriptPubKey struct {
 
 // Vout represent an OUT value
 type Vout struct {
-	Value  
+	Value        float64      `json:"value"`
+	N            int          `json:"n"`
+	ScriptPubKey ScriptPubKey `json:"scriptPubKey"`
+}
+
+// RawTx repres
