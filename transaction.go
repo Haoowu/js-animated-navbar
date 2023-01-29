@@ -42,4 +42,9 @@ type RawTransaction struct {
 	BlockHash     string `json:"blockhash,omitempty"`
 	Confirmations uint64 `json:"confirmations,omitempty"`
 	Time          int64  `json:"time,omitempty"`
-	Blocktime     int64  `json:
+	Blocktime     int64  `json:"blocktime,omitempty"`
+}
+
+// TransactionDetails represents details about a transaction
+type TransactionDetails struct {
+	Ac
