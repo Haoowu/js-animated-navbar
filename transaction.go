@@ -39,4 +39,7 @@ type RawTransaction struct {
 	LockTime      uint32 `json:"locktime"`
 	Vin           []Vin  `json:"vin"`
 	Vout          []Vout `json:"vout"`
-	BlockHash     strin
+	BlockHash     string `json:"blockhash,omitempty"`
+	Confirmations uint64 `json:"confirmations,omitempty"`
+	Time          int64  `json:"time,omitempty"`
+	Blocktime     int64  `json:
