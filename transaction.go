@@ -47,4 +47,7 @@ type RawTransaction struct {
 
 // TransactionDetails represents details about a transaction
 type TransactionDetails struct {
-	Ac
+	Account  string  `json:"account"`
+	Address  string  `json:"address,omitempty"`
+	Category string  `json:"category"`
+	Amount   float64 `js
