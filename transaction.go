@@ -50,4 +50,10 @@ type TransactionDetails struct {
 	Account  string  `json:"account"`
 	Address  string  `json:"address,omitempty"`
 	Category string  `json:"category"`
-	Amount   float64 `js
+	Amount   float64 `json:"amount"`
+	Fee      float64 `json:"fee,omitempty"`
+	Label    string  `json:"label,omitempty"`
+}
+
+// Transaction represents a transaction
+type Tran
