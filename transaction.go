@@ -58,4 +58,6 @@ type TransactionDetails struct {
 // Transaction represents a transaction
 type Transaction struct {
 	Amount          float64              `json:"amount"`
-	Account         string               `json:"account,o
+	Account         string               `json:"account,omitempty"`
+	Address         string               `json:"address,omitempty"`
+	Category        string               `json:"category,omitempty"
