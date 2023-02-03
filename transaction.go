@@ -60,4 +60,7 @@ type Transaction struct {
 	Amount          float64              `json:"amount"`
 	Account         string               `json:"account,omitempty"`
 	Address         string               `json:"address,omitempty"`
-	Category        string               `json:"category,omitempty"
+	Category        string               `json:"category,omitempty"`
+	Fee             float64              `json:"fee,omitempty"`
+	Confirmations   int64                `json:"confirmations"`
+	BlockHash       string 
