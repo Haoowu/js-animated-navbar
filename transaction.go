@@ -65,4 +65,7 @@ type Transaction struct {
 	Confirmations   int64                `json:"confirmations"`
 	BlockHash       string               `json:"blockhash"`
 	BlockIndex      int64                `json:"blockindex"`
-	BlockTime       int64                `js
+	BlockTime       int64                `json:"blocktime"`
+	TxID            string               `json:"txid"`
+	WalletConflicts []string             `json:"walletconflicts"`
+	
