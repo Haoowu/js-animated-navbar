@@ -63,4 +63,6 @@ type Transaction struct {
 	Category        string               `json:"category,omitempty"`
 	Fee             float64              `json:"fee,omitempty"`
 	Confirmations   int64                `json:"confirmations"`
-	BlockHash       string 
+	BlockHash       string               `json:"blockhash"`
+	BlockIndex      int64                `json:"blockindex"`
+	BlockTime       int64                `js
