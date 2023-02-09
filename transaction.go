@@ -70,4 +70,8 @@ type Transaction struct {
 	WalletConflicts []string             `json:"walletconflicts"`
 	Time            int64                `json:"time"`
 	TimeReceived    int64                `json:"timereceived"`
-	Details         []Transacti
+	Details         []TransactionDetails `json:"details,omitempty"`
+	Hex             string               `json:"hex,omitempty"`
+}
+
+// UTransactionOut repre
