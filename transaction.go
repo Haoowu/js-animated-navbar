@@ -74,4 +74,7 @@ type Transaction struct {
 	Hex             string               `json:"hex,omitempty"`
 }
 
-// UTransactionOut repre
+// UTransactionOut represents a unspent transaction out (UTXO)
+type UTransactionOut struct {
+	Bestblock     string       `json:"bestblock"`
+	C
