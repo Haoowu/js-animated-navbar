@@ -77,4 +77,6 @@ type Transaction struct {
 // UTransactionOut represents a unspent transaction out (UTXO)
 type UTransactionOut struct {
 	Bestblock     string       `json:"bestblock"`
-	C
+	Confirmations uint32       `json:"confirmations"`
+	Value         float64      `json:"value"`
+	ScriptPubKey  ScriptPubKey `jso
