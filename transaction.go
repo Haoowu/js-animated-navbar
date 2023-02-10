@@ -79,4 +79,6 @@ type UTransactionOut struct {
 	Bestblock     string       `json:"bestblock"`
 	Confirmations uint32       `json:"confirmations"`
 	Value         float64      `json:"value"`
-	ScriptPubKey  ScriptPubKey `jso
+	ScriptPubKey  ScriptPubKey `json:"scriptPubKey"`
+	Version       uint32       `json:"version"`
+	Coinbase      bool         `json:"coinb
