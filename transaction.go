@@ -86,4 +86,7 @@ type UTransactionOut struct {
 
 // TransactionOutSet represents statistics about the unspent transaction output database
 type TransactionOutSet struct {
-	Height       
+	Height          uint32  `json:"height"`
+	Bestblock       string  `json:"bestblock"`
+	Transactions    float64 `json:"transactions"`
+	TxOuts         
