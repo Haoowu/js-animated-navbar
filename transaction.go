@@ -81,4 +81,9 @@ type UTransactionOut struct {
 	Value         float64      `json:"value"`
 	ScriptPubKey  ScriptPubKey `json:"scriptPubKey"`
 	Version       uint32       `json:"version"`
-	Coinbase      bool         `json:"coinb
+	Coinbase      bool         `json:"coinbase"`
+}
+
+// TransactionOutSet represents statistics about the unspent transaction output database
+type TransactionOutSet struct {
+	Height       
