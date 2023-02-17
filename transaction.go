@@ -91,4 +91,6 @@ type TransactionOutSet struct {
 	Transactions    float64 `json:"transactions"`
 	TxOuts          float64 `json:"txouts"`
 	BytesSerialized float64 `json:"bytes_serialized"`
-	HashSerialized  string  `json:"hash_s
+	HashSerialized  string  `json:"hash_serialized"`
+	TotalAmount     float64 `json:"total_amount"`
+}
