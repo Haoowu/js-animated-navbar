@@ -89,4 +89,6 @@ type TransactionOutSet struct {
 	Height          uint32  `json:"height"`
 	Bestblock       string  `json:"bestblock"`
 	Transactions    float64 `json:"transactions"`
-	TxOuts         
+	TxOuts          float64 `json:"txouts"`
+	BytesSerialized float64 `json:"bytes_serialized"`
+	HashSerialized  string  `json:"hash_s
